@@ -6,23 +6,11 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 16:23:52 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/29 17:04:11 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/10/31 13:49:49 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strcat(char *dest, char *src)
 {

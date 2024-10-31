@@ -6,12 +6,11 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 18:22:23 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/26 19:07:52 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/10/31 13:49:42 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

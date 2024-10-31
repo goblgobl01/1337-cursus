@@ -6,11 +6,11 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:18:13 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/30 15:27:48 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/10/31 13:50:11 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	inside_set(const char c, const char *set)
 {
@@ -49,7 +49,7 @@ int	find_end(const char *s1, const char *set)
 	int	i;
 	int	length;
 
-	length = strlen(s1) - 1;
+	length = ft_strlen(s1) - 1;
 	while (length != -1)
 	{
 		if (inside_set(s1[length], set))

@@ -6,12 +6,11 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 15:52:01 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 11:52:57 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/10/31 13:49:10 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int	count_words(int n)
 {
