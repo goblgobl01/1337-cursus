@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 15:13:36 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/29 15:40:45 by mmaarafi         ###   ########.fr       */
+/*   Created: 2024/10/30 19:11:01 by mmaarafi          #+#    #+#             */
+/*   Updated: 2024/10/30 19:17:07 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <unistd.h>
 
-char	*ft_strdup(char *src)
+void ft_putstr_fd(char *s, int fd)
 {
-		int		length;
-		int		i;
-		char	*p;
+	int	i;
 
-		length = strlen(src);
-		p = malloc(length + 1);
-		if (p == NULL)
-				return (NULL);
-		i = 0;
-		while (src[i])
-		{
-			p[i] = src[i];
-			i++;
-		}
-		p[i] = 0;
-		return (p);
+	i = 0;
+	while (*(s + i) != '\0')
+	{
+		write(fd, (s + i), 1);
+		i++;
+	}
 }

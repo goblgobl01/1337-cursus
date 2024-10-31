@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 15:13:36 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/29 15:40:45 by mmaarafi         ###   ########.fr       */
+/*   Created: 2024/10/30 19:18:08 by mmaarafi          #+#    #+#             */
+/*   Updated: 2024/10/30 19:19:11 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-char	*ft_strdup(char *src)
+void ft_putnbr_fd(int n, int fd)
 {
-		int		length;
-		int		i;
-		char	*p;
+	char		x;
+	char		y;
+	long int	overflow_case;
 
-		length = strlen(src);
-		p = malloc(length + 1);
-		if (p == NULL)
-				return (NULL);
-		i = 0;
-		while (src[i])
-		{
-			p[i] = src[i];
-			i++;
-		}
-		p[i] = 0;
-		return (p);
+	overflow_case = n;
+	if (overflow_case < 0)
+	{
+		write(fd, "-", 1);
+		overflow_case = -overflow_case;
+	}
+	if (overflow_case < 10)
+	{
+		x = overflow_case + '0';
+		write(fd, &x, 1);
+	}
+	else
+	{
+		ft_putnbr(overflow_case / 10);
+		y = (overflow_case % 10) + '0';
+		write(fd, &y, 1);
+	}
 }

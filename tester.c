@@ -1,30 +1,16 @@
-#include <stdlib.h>
-#include <stdio.h>
-
-void	*ft_calloc(size_t count, size_t size)
+void ft_putstr_fd(char *s, int fd)
 {
-	char *p;
-	int i;
+	int	i;
 
-	p = malloc(count * size);
-	if(p == NULL)
-		return (NULL);
-	while(i < count * size)
+	i = 0;
+	while (*(s + i) != '\0')
 	{
-		p[i] = 0;
+		write(fd, (s + i), 1);
 		i++;
 	}
-	return ((void *) p);
 }
 
 int main()
 {
-	int i;
-	int *p = ft_calloc(4, 4);
-	i = 0;
-
-	while(i < 4)
-	{
-		printf("%d\n", p[i]);
-	}
+    ft_putstr_fd("hello", 1);
 }
