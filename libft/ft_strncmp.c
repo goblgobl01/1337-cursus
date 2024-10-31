@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 18:39:47 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/26 18:46:38 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/10/31 11:58:57 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	{
 		n = n - 1;
 		while ((s1[i] != '\0' && s2[i] != '\0') && s1[i] == s2[i] && n--)
-		{
-				i++;
-		}
+			i++;
 		return (s1[i] - s2[i]);
 	}
 	else
-			return (0);
+		return (0);
 }

@@ -2,11 +2,11 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
-/*        	                                            +:+ +:+         +:+     */
-/*   By:	 mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 19:56:08 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/29 10:06:32 by mmaarafi         ###   ########.fr       */
+/*   Created: 2024/10/31 11:53:38 by mmaarafi          #+#    #+#             */
+/*   Updated: 2024/10/31 11:53:44 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-		unsigned char	*p_s1;
-		unsigned char	*p_s2;
-		int				i;
+	unsigned char	*p_s1;
+	unsigned char	*p_s2;
+	int				i;
 
-		p_s1 = (unsigned char *)s1;
-		p_s2 = (unsigned char *)s2;
-		i = 0;
-		if (n > 0)
+	p_s1 = (unsigned char *)s1;
+	p_s2 = (unsigned char *)s2;
+	i = 0;
+	if (n > 0)
+	{
+		n = n - 1;
+		while (i <= n)
 		{
-				n = n - 1;
-				while (i <= n)
-				{
-					if(p_s1[i] == p_s2[i])
-						i++;
-					else
-					{
-							return (p_s1[i] - p_s2[i]);
-							break;
-					}
-				}
+			if (p_s1[i] == p_s2[i])
+				i++;
+			else
+			{
+				return (p_s1[i] - p_s2[i]);
+				break ;
+			}
 		}
-		return (0);
+	}
+	return (0);
 }
 
 // #include <stdio.h>
@@ -72,5 +72,5 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 //     // Case 7: `n` is zero
 //     test_ft_memcmp("abc", "xyz", 0, 0);
 
-//     return 0;
+//     return (0);
 // }

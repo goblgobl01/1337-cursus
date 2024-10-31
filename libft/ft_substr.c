@@ -18,15 +18,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	int		s_size;
 	char	*p;
 
-
 	s_size = strlen(s);
-	if(start >= s_size)
+	if (start >= s_size)
 		return (NULL);
 	p = malloc(s_size - start + 1);
-	if(p == NULL)
+	if (p == NULL)
 		return (NULL);
 	i = 0;
-	while(s[start + i])
+	while (s[start + i])
 	{
 		p[i] = s[start + i];
 		i++;
@@ -36,6 +35,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 }
 
 // int main()
-// {    
+// {
 //     ft_substr("hello", 4, 40);
 // }

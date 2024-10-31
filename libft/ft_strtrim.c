@@ -29,16 +29,17 @@ int	inside_set(const char c, const char *set)
 int	find_start(const char *s1, const char *set)
 {
 	int	i;
+
 	i = 0;
-	while(s1[i])
+	while (s1[i])
 	{
-		if(inside_set(s1[i], set))
+		if (inside_set(s1[i], set))
 		{
 			i++;
-			continue;
+			continue ;
 		}
 		else
-			break;
+			break ;
 	}
 	return (i);
 }
@@ -49,15 +50,15 @@ int	find_end(const char *s1, const char *set)
 	int	length;
 
 	length = strlen(s1) - 1;
-	while(length != -1)
+	while (length != -1)
 	{
-		if(inside_set(s1[length], set))
+		if (inside_set(s1[length], set))
 		{
 			length--;
-			continue;
+			continue ;
 		}
 		else
-			break;
+			break ;
 	}
 	return (length);
 }
@@ -69,15 +70,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		length;
 	int		i;
 	char	*ptr;
-	
+
 	start = find_start(s1, set);
 	end = find_end(s1, set);
 	length = start - end + 2;
 	ptr = malloc(length);
-	if(ptr == NULL)
+	if (ptr == NULL)
 		return (NULL);
 	i = 0;
-	while(start <= end)
+	while (start <= end)
 		ptr[i++] = s1[start++];
 	ptr[i] = 0;
 	return (ptr);

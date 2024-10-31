@@ -6,13 +6,13 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 13:36:59 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/26 16:56:53 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/10/31 11:48:57 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <strings.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -39,29 +39,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		return (dest_size + src_size);
 	}
 }
-
-// int main(void)
-// {
-// 	char buffer[20];
-
-// 	// // Test case 1: Normal concatenation within buffer size
-// 	// strcpy(buffer, "Hello");
-// 	// printf("Result: %zu, Buffer: %s\n", ft_strlcat(buffer, " World", 20), buffer);
-
-// 	// // Test case 2: Concatenation when dstsize is less than dst length
-// 	// strcpy(buffer, "12345");
-// 	// printf("Result: %zu, Buffer: %s\n", ft_strlcat(buffer, "6789", 5), buffer);
-
-// 	// // Test case 3: Concatenation when dstsize is zero (shouldn't modify dst)
-// 	// strcpy(buffer, "Hello");
-// 	// printf("Result: %zu, Buffer: %s\n", strlcat(buffer, "There", 0), buffer);
-
-// 	// // Test case 4: src is empty (should return length of dst)
-// 	// strcpy(buffer, "Hello");
-// 	// printf("Result: %zu, Buffer: %s", strlcat(buffer, "", sizeof(buffer)), buffer);
-
-// 	// Test case 5: dst is empty (should copy src up to dstsize - 1)
-// 	strcpy(buffer, "");
-// 	printf("Result: %zu, Buffer: %s\n", ft_strlcat(buffer, "Hello", sizeof(buffer)), buffer);
-// 	return 0;
-// }

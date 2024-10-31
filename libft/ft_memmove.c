@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:48:59 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/26 12:09:54 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/10/31 11:54:25 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	dest = (char *)dst;
 	source = (char *)src;
-	if(dest > source)
+	if (dest > source)
 	{
 		i = len - 1;
-		while(i != -1)
+		while (i != -1)
 		{
 			dest[i] = source[i];
 			i--;
@@ -33,7 +33,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	else
 	{
 		i = 0;
-		while(i < len)
+		while (i < len)
 		{
 			dest[i] = source[i];
 			i++;
@@ -42,14 +42,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	return (dest);
 }
 
-int main(void)
-{
-	char data[] = "HelloWor";
-	char data2[] = "My name is";
+// int	main(void)
+// {
+// 	char data[] = "HelloWor";
+// 	char data2[] = "My name is";
 
-	ft_memmove(data, data2, 10);
+// 	ft_memmove(data, data2, 10);
 
-	printf("Result with memcpy: %s\n", data);
+// 	printf("Result with memcpy: %s\n", data);
 
-	return 0;
-}
+// 	return (0);
+// }

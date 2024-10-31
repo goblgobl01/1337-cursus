@@ -75,7 +75,6 @@ char	**ft_split(char *str, char c)
 	return (strs);
 }
 
-
 // int main()
 // {
 //     char **ptr = ft_split("*", '*');

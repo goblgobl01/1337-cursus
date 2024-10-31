@@ -12,26 +12,26 @@
 
 #include <stdlib.h>
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		i;
 	int		length;
 	char	*ptr;
 
-	if(!s || !f)
+	if (!s || !f)
 		return (NULL);
 	i = 0;
 	length = strlen(s);
 	ptr = malloc(length + 1);
-	if(ptr == NULL)
+	if (ptr == NULL)
 		return (NULL);
-	while(s[i])
+	while (s[i])
 	{
 		ptr[i] = f(i, s[i]);
 		i++;
 	}
 	ptr[i] = 0;
-	return(ptr);
+	return (ptr);
 }
 // char fun_32(unsigned int n, char c)
 // {

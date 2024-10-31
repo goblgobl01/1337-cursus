@@ -26,7 +26,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		}
 		dst[i] = '\0';
 	}
-	return ((unsigned int) ft_strlen(src));
+	return ((unsigned int)ft_strlen(src));
 }
 
 // int main()
@@ -36,6 +36,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 // 	int retur;
 
 // 	retur = strlcpy(dest, source, 1);
-// 	printf("this is the string: \"%s\", 
-// this the return value: %d", dest, retur);
+// 	printf("this is the string: \"%s\",
+// this the return (value: %d", dest, retur));
 // }

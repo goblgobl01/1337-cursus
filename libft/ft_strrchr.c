@@ -10,21 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
-	int length;
+	int	length;
 
 	length = strlen(s) - 1;
 	i = 0;
-	while(length != -1)
+	while (length != -1)
 	{
-		if(s[length] == c)
-			return ((char *) (s + length));
+		if (s[length] == c)
+			return ((char *)(s + length));
 		length--;
 	}
 	return (NULL);
