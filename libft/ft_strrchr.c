@@ -6,18 +6,18 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 18:34:46 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 13:50:09 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/01 13:56:11 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 	int	length;
 
-	length = ft_strlen(s) - 1;
+	length = ft_strlen(s);
 	i = 0;
 	while (length != -1)
 	{

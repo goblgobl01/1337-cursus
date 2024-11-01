@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:33:25 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 20:24:53 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/01 15:12:50 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		{
 			p = &haystack[i];
 			value = my_function(haystack, &i, needle, &j);
-			if (value == ft_strlen(needle))
+			if (value == ft_strlen(needle) && i < len)
 				return ((char *)p);
 			else
 				j = 0;
