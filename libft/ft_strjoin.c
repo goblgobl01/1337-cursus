@@ -6,13 +6,13 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 16:23:52 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 13:49:49 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/10/31 19:50:55 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, const char *src)
 {
 	int	length_dest;
 	int	i;
@@ -31,7 +31,6 @@ char	*ft_strcat(char *dest, char *src)
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		length;
-	int		i;
 	char	*str;
 
 	length = ft_strlen(s1) + ft_strlen(s2);

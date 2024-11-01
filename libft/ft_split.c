@@ -6,13 +6,13 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 15:18:43 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 13:49:39 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/10/31 19:42:38 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_words(char *str, char c)
+int	count_words(const char *str, char c)
 {
 	int	i;
 	int	count;
@@ -33,7 +33,7 @@ int	count_words(char *str, char c)
 	return (count);
 }
 
-void	allocate_duplicate(char *str, char c, int count, char **strs)
+void	allocate_duplicate(const char *str, char c, int count, char **strs)
 {
 	int	i;
 	int	j;
@@ -62,16 +62,16 @@ void	allocate_duplicate(char *str, char c, int count, char **strs)
 	strs[k] = NULL;
 }
 
-char	**ft_split(char *str, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**strs;
 	int		count;
 
-	count = count_words(str, c);
+	count = count_words(s, c);
 	strs = malloc(sizeof(char *) * (count + 1));
 	if (strs == NULL)
 		return (NULL);
-	allocate_duplicate(str, c, count, strs);
+	allocate_duplicate(s, c, count, strs);
 	return (strs);
 }
 

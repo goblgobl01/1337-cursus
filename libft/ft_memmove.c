@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:48:59 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 13:49:23 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/10/31 20:41:08 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	else
 	{
 		i = 0;
-		while (i < len)
+		while ((size_t)i < len)
 		{
 			dest[i] = source[i];
 			i++;

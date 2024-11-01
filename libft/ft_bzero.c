@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 16:18:39 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 13:48:17 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/10/31 19:23:14 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	while (i < n)
 		p_b[i++] = 0;
-	return (p_b);
 }
 
 /**

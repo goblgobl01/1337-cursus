@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 16:27:22 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 13:49:20 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/10/31 19:18:03 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
 	char	*dest;
 	char	*source;
-	int		i;
+	size_t	i;
 
 	dest = (char *)dst;
 	source = (char *)src;

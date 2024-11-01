@@ -6,13 +6,13 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:33:25 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 13:50:07 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/10/31 20:24:53 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	my_function(char *haystack, int *i, char *needle, int *j)
+int	my_function(const char *haystack, size_t *i, const char *needle, size_t *j)
 {
 	while (haystack[*i] == needle[*j] && haystack[*i] && needle[*j])
 	{
@@ -24,21 +24,23 @@ int	my_function(char *haystack, int *i, char *needle, int *j)
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int		i;
-	int		j;
-	char	*p;
+	size_t		i;
+	size_t		j;
+	size_t		value;
+	const char	*p;
 
 	i = 0;
 	j = 0;
 	if (ft_strlen(needle) == 0)
-		return (haystack);
+		return ((char *) haystack);
 	while (haystack[i] && i < len)
 	{
 		if (haystack[i] == needle[0])
 		{
 			p = &haystack[i];
-			if (my_function(haystack, &i, needle, &j) == ft_strlen(needle))
-				return (p);
+			value = my_function(haystack, &i, needle, &j);
+			if (value == ft_strlen(needle))
+				return ((char *)p);
 			else
 				j = 0;
 		}
