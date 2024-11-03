@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 13:36:59 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 13:49:52 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/03 12:54:28 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	dest_size;
 	size_t	length;
 
+	if (dstsize == 0)
+		return (ft_strlen(src));
 	dest_size = ft_strlen(dst);
 	src_size = ft_strlen(src);
 	length = ft_strlen(dst);

@@ -6,43 +6,46 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:33:25 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/01 15:12:50 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/03 15:57:32 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	my_function(const char *haystack, size_t *i, const char *needle, size_t *j)
+int	my_function(const char *haystack, size_t *i, const char *needle)
 {
-	while (haystack[*i] == needle[*j] && haystack[*i] && needle[*j])
+	size_t	j;
+
+	j = 0;
+	while (haystack[*i] == needle[j] && haystack[*i] && needle[j])
 	{
 		*i = *i + 1;
-		*j = *j + 1;
+		j++;
 	}
-	return (*j);
+	return (j);
 }
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t		i;
-	size_t		j;
+	size_t		remembrance;
 	size_t		value;
 	const char	*p;
 
 	i = 0;
-	j = 0;
-	if (ft_strlen(needle) == 0)
+	if (ft_strlen(needle) == 0 || len < 0)
 		return ((char *) haystack);
 	while (haystack[i] && i < len)
 	{
 		if (haystack[i] == needle[0])
 		{
 			p = &haystack[i];
-			value = my_function(haystack, &i, needle, &j);
-			if (value == ft_strlen(needle) && i < len)
+			remembrance = i;
+			value = my_function(haystack, &i, needle);
+			if (value == ft_strlen(needle) && i <= len)
 				return ((char *)p);
-			else
-				j = 0;
+			i = remembrance;
+			i++;
 		}
 		else
 			i++;

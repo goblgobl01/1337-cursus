@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:18:13 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 20:25:31 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/03 16:56:32 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	start = find_start(s1, set);
 	end = find_end(s1, set);
-	length = start - end + 2;
+	length = end - start + 2;
+	if (start > end)
+	{
+		ptr = malloc(1);
+		if (ptr == NULL)
+			return (NULL);
+		*ptr = 0;
+		return (ptr);
+	}
 	ptr = malloc(length);
 	if (ptr == NULL)
 		return (NULL);

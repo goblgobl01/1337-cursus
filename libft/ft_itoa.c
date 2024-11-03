@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 15:52:01 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 13:49:10 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/03 13:19:25 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	count_words(int n)
 		n = n / 10;
 		i++;
 	}
-	return (i);
+	return (i - 1);
 }
 
 void	string_filler_3000(char *ptr, long int n, int count)
@@ -57,7 +57,7 @@ char	*ft_itoa(int n)
 	char	*ptr;
 
 	count = count_words(n);
-	if (n < 0)
+	if (n <= 0)
 		count++;
 	ptr = malloc(count + 1);
 	if (ptr == NULL)

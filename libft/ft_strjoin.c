@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 16:23:52 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 19:50:55 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/01 17:43:50 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	length = ft_strlen(s1) + ft_strlen(s2);
 	str = malloc(length + 1);
+	if (str == NULL)
+		return (NULL);
+	str[0] = '\0';
 	ft_strcat(str, s1);
 	ft_strcat(str, s2);
 	return (str);
