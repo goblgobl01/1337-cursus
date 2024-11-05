@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 15:18:43 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/05 12:55:34 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/05 13:16:05 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	my_count_words(const char *str, char c)
 	return (count);
 }
 
-void	free_all(char **strs, int k)
+void	*free_all(char **strs, int k)
 {
 	int	i;
 
@@ -44,10 +44,10 @@ void	free_all(char **strs, int k)
 		i++;
 	}
 	free(strs);
-	return ;
+	return (NULL);
 }
 
-void	allocate_duplicate(const char *str, char c, int count, char **strs)
+void	*allocate_duplicate(const char *str, char c, int count, char **strs)
 {
 	int	i;
 	int	j;
@@ -73,6 +73,7 @@ void	allocate_duplicate(const char *str, char c, int count, char **strs)
 		l = 0;
 	}
 	strs[k] = NULL;
+	return ((void *)1);
 }
 
 char	**ft_split(char const *s, char c)
@@ -84,7 +85,8 @@ char	**ft_split(char const *s, char c)
 	strs = malloc(sizeof(char *) * (count + 1));
 	if (strs == NULL)
 		return (NULL);
-	allocate_duplicate(s, c, count, strs);
+	if (!allocate_duplicate(s, c, count, strs))
+		return (NULL);
 	return (strs);
 }
 
