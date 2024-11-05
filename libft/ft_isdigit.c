@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:44:53 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 13:49:04 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/04 13:31:48 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,9 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
+
+// int main()
+// {
+// 	printf("%d\n", ft_isdigit(0));
+// 	printf("%d\n", isdigit(0));
+// }

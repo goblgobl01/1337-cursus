@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 15:18:43 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/03 13:16:31 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/05 12:55:34 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,20 @@ int	my_count_words(const char *str, char c)
 	return (count);
 }
 
+void	free_all(char **strs, int k)
+{
+	int	i;
+
+	i = 0;
+	while (i < k)
+	{
+		free(strs[i]);
+		i++;
+	}
+	free(strs);
+	return ;
+}
+
 void	allocate_duplicate(const char *str, char c, int count, char **strs)
 {
 	int	i;
@@ -45,15 +59,14 @@ void	allocate_duplicate(const char *str, char c, int count, char **strs)
 	i = 0;
 	while (k < count)
 	{
-		if (str[i] == c)
-		{
+		while (str[i] == c)
 			i++;
-			continue ;
-		}
 		j = i;
 		while (str[i] && !(str[i] == c))
 			i++;
 		strs[k] = malloc((i - j) + 1);
+		if (strs[k] == NULL)
+			return (free_all(strs, k));
 		while (j < i)
 			strs[k][l++] = str[j++];
 		strs[k++][l] = 0;

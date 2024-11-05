@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 11:02:10 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/01 18:21:47 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/04 12:00:43 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
+# include <limits.h>
+# include <string.h>
+# include <ctype.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);

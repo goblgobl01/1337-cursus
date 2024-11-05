@@ -1,74 +1,44 @@
-#include <stdlib.h>
+// #include <stdlib.h>
+// #include <stdio.h>
+// #include <string.h>
+
+// void	*ft_memchr(const void *s, int c, size_t n)
+// {
+// 	unsigned char	*p;
+// 	size_t			i;
+
+// 	p = (unsigned char *)s;
+// 	i = 0;
+// 	while (i < n)
+// 	{
+// 		if (i[p] == (unsigned char)c)
+// 			return ((void *)(p + i));
+// 		i++;
+// 	}
+// 	return (NULL);
+// }
+
+// int main()
+// {
+// 	printf("%s\n", memchr("", 266, 10));
+// 	printf("%s\n", ft_memchr("", 10, 10));
+// }
+
 #include <stdio.h>
-#include <string.h>
-
-#include "libft.h"
-
-int	my_count_words(const char *str, char c)
-{
-	int	i;
-	int	count;
-
-	count = 0;
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-		{
-			i++;
-			continue ;
-		}
-		while (str[i] && !(str[i] == c))
-			i++;
-		count++;
-	}
-	return (count);
-}
-
-void	allocate_duplicate(const char *str, char c, int count, char **strs)
-{
-	int	i;
-	int	j;
-	int	k;
-	int	l;
-
-	l = 0;
-	k = 0;
-	i = 0;
-	while (k < count)
-	{
-		if (str[i] == c)
-		{
-			i++;
-			continue ;
-		}
-		j = i;
-		while (str[i] && !(str[i] == c))
-			i++;
-		strs[k] = malloc((i - j) + 1);
-		while (j < i)
-			strs[k][l++] = str[j++];
-		strs[k++][l] = 0;
-		l = 0;
-	}
-	strs[k] = NULL;
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**strs;
-	int		count;
-
-	count = my_count_words(s, c);
-	strs = malloc(sizeof(char *) * (count + 1));
-	if (strs == NULL)
-		return (NULL);
-	allocate_duplicate(s, c, count, strs);
-	return (strs);
-}
-
+#include <stdlib.h>
 int main()
 {
-	// printf("%zu", sizeof(char));
-	printf("%s", ft_substr("hello", 4, 0));
+// 	char array[] = {-1, 97, 98, 99, 0};
+	char *str = malloc(6);
+    // char array1[] = {102, 104, 103, 0};
+    // char *ptr = ft_memcpy(array, array1, 10);
+// 	char *ptr1 = memcpy(array, array1, 10);
+    str[0] = 'H';
+    str[1] = 'o';
+    str[2] = 'D';
+    str[3] = 'a';
+    str[4] = 'T';
+    str[5] = '\0';
+    printf("%s", str);
+	pause();
 }

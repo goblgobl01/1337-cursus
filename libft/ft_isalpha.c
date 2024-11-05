@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 17:19:14 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 13:48:58 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/04 12:03:20 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,9 @@ int	ft_isalpha(int c)
 		return (1);
 	return (0);
 }
+
+// int main()
+// {
+// 	printf("%d\n", ft_isalpha(INT_MAX + 1));
+// 	printf("%d\n", isalpha(INT_MAX + 1));
+// }

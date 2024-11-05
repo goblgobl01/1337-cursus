@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 16:27:22 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/03 17:00:50 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/05 10:15:01 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char	*dest;
-	char	*source;
-	size_t	i;
+	unsigned char	*dest;
+	unsigned char	*source;
+	size_t			i;
 
 	if (!dst && !src)
 		return (NULL);
-	dest = (char *)dst;
-	source = (char *)src;
+	dest = (unsigned char *)dst;
+	source = (unsigned char *)src;
 	i = 0;
 	while (i < n)
 	{
@@ -30,3 +30,12 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+// int main()
+// {
+// 	char array[] = {-1, 97, 98, 99, 0};
+//	char *str = "Hello";
+//     char array1[] = {102, 104, 103, 0};
+//     // char *ptr = ft_memcpy(array, array1, 10);
+// 	char *ptr1 = memcpy(array, array1, 10);
+// }
