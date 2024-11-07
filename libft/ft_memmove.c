@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:48:59 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/05 11:13:13 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/07 15:12:13 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dest);
 }
+
+// int main()
+// {
+// 	char array[] = {101, 102, 103, 0};
+// 	printf("im here\n");
+// 	memmove(array, NULL, 0);
+// 	// printf("%s", );
+// }
 
 // int	main(void)
 // {

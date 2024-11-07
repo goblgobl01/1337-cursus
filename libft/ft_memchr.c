@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 18:51:01 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/04 14:32:53 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/07 15:25:05 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+
+// int main()
+// {
+// 	printf("im here\n");
+// 	printf("%s", ft_memchr(NULL, 'c', 10));
+// }
 
 // int main()
 // {

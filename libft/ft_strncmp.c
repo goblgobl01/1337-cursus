@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 18:39:47 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/01 16:44:03 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/07 15:18:41 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	else
 		return (0);
 }
+
+// int main()
+// {
+// 	printf("im here\n");
+// 	printf("%d\n", strncmp(NULL, NULL, -1));
+// }

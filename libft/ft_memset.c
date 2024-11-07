@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 15:12:45 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/04 14:59:34 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/05 13:39:39 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ void	*ft_memset(void *b, int c, size_t len)
 		p_b[i++] = (unsigned char)c;
 	return (p_b);
 }
+
+// int main()
+// {
+// 	char array[] = {101, 102, 103, 0};
+// 	printf("%s", ft_memset(NULL, 'c', 2));
+// }
 
 // int main()
 // {

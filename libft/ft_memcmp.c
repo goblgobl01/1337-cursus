@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 11:53:38 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 19:26:57 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/07 15:30:21 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,18 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 				i++;
 			else
 			{
-				return (p_s1[i] - p_s2[i]);
+				return ((unsigned char)p_s1[i] - (unsigned char)p_s2[i]);
 				break ;
 			}
 		}
 	}
 	return (0);
 }
+
+// int main()
+// {
+// 	printf("%d\n", ft_memcmp(NULL, NULL, 0));
+// }
 
 // #include <stdio.h>
 // #include <string.h>
