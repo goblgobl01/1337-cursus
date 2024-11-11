@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 15:21:01 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/03 16:49:32 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/08 10:40:09 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*p;
 	int				length;
 
+	if (!s)
+		return (NULL);
 	s_size = ft_strlen(s);
 	if (start >= s_size)
-	{
-		p = malloc(1);
-		if (p == NULL)
-			return (NULL);
-		*p = 0;
-		return (p);
-	}
+		return (ft_strdup(""));
 	length = s_size - start;
 	if (s_size - start > len)
 		length = len;
@@ -43,6 +39,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 // int main()
 // {
-// 	printf("%zu", sizeof(char));
-//     // ft_substr("hello", 4, 40);
+// 	printf("hello again\n");
+// 	ft_substr(NULL, 4, 40);
 // }

@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 19:18:08 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 20:45:09 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/08 10:50:28 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_putnbr_fd(int n, int fd)
 	char		y;
 	long int	overflow_case;
 
+	if (fd < 0)
+		return ;
 	overflow_case = n;
 	if (overflow_case < 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:59:37 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/07 19:27:33 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/08 16:52:46 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,17 @@ int	ft_atoi(const char *str)
 	return (result * sign);
 }
 
+// int	previous_result;
+// previous_result = result;
+// if(result == INT_MIN)
+// 	return (result);
+// if (previous_result > result && sign == 1)
+// 	return (-1);
+// if (previous_result > result && sign == -1)
+// 	return (0);
 // int main()
 // {
 // 	printf("im here now\n");
-// 	printf("%d\n", ft_atoi(NULL));
-// 	printf("%d\n", atoi(NULL));
+// 	printf("%d\n", ft_atoi("-999999999999999999999"));
+// 	printf("%d\n", atoi("-999999999999999999999"));
 // }

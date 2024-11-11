@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 16:23:52 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/01 17:43:50 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/09 11:18:55 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		length;
 	char	*str;
 
+	if (!s1 || !s2)
+		return (NULL);
 	length = ft_strlen(s1) + ft_strlen(s2);
 	str = malloc(length + 1);
 	if (str == NULL)

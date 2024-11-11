@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 19:11:01 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 13:49:37 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/08 10:50:36 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
+	if (fd < 0)
+		return ;
 	i = 0;
 	while (*(s + i) != '\0')
 	{
