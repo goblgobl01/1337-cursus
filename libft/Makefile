@@ -6,7 +6,11 @@
 #    By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/31 18:52:25 by mmaarafi          #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2024/11/14 13:18:05 by mmaarafi         ###   ########.fr        #
+=======
+#    Updated: 2024/11/14 11:47:37 by mmaarafi         ###   ########.fr        #
+>>>>>>> 36e1a352989d2477a59389741f6c34b4235c6de5
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,5 +50,5 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-
 re: fclean all
+.PHONY: clean re fclean
