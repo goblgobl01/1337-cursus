@@ -6,7 +6,7 @@
 #    By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/31 18:52:25 by mmaarafi          #+#    #+#              #
-#    Updated: 2024/11/14 11:47:37 by mmaarafi         ###   ########.fr        #
+#    Updated: 2024/11/14 13:18:05 by mmaarafi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,16 +28,23 @@ OBJECT_FILES = $(patsubst %.c,%.o,$(SRCS))
 BONUS_OBJECT_FILES = $(patsubst %.c,%.o,$(BONUS))
 
 all: $(NAME)
+
 $(NAME): $(OBJECT_FILES)
 	ar -rcs $(NAME) $(OBJECT_FILES)
+
 %.o: %.c libft.h
-	CC $(CFLAGS) -c $< -o $@
-bonus: $(BONUS_OBJECT_FILES)
+	CC $(CFLAGS) -c $< -o $@ -fsanitize=address -g
+
+bonus: .bonus_f
+
+.bonus_f: $(BONUS_OBJECT_FILES)
 	ar -rcs $(NAME) $(BONUS_OBJECT_FILES)
-	touch bonus
+	@touch .bonus_f
+
 clean:
-	rm -f $(OBJECT_FILES) $(BONUS_OBJECT_FILES) bonus
+	rm -f $(OBJECT_FILES) $(BONUS_OBJECT_FILES) .bonus_f
+
 fclean: clean
 	rm -f $(NAME)
+
 re: fclean all
-.PHONY: clean re fclean
