@@ -6,13 +6,13 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:18:13 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/08 10:44:15 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/14 11:34:18 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
 
-int	inside_set(const char c, const char *set)
+static int	inside_set(const char c, const char *set)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	inside_set(const char c, const char *set)
 	return (0);
 }
 
-int	find_start(const char *s1, const char *set)
+static int	find_start(const char *s1, const char *set)
 {
 	int	i;
 
@@ -44,7 +44,7 @@ int	find_start(const char *s1, const char *set)
 	return (i);
 }
 
-int	find_end(const char *s1, const char *set)
+static int	find_end(const char *s1, const char *set)
 {
 	int	length;
 

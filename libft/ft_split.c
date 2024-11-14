@@ -6,13 +6,13 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 15:18:43 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/08 10:44:29 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/14 11:31:39 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	my_count_words(const char *str, char c)
+static int	my_count_words(const char *str, char c)
 {
 	int	i;
 	int	count;
@@ -33,7 +33,7 @@ int	my_count_words(const char *str, char c)
 	return (count);
 }
 
-void	*free_all(char **strs, int k)
+static void	*free_all(char **strs, int k)
 {
 	int	i;
 
@@ -47,7 +47,7 @@ void	*free_all(char **strs, int k)
 	return (NULL);
 }
 
-void	*allocate_duplicate(const char *str, char c, int count, char **strs)
+static void	*allocate_duplicate(const char *str, char c, int count, char **strs)
 {
 	int	i;
 	int	j;

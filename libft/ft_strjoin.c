@@ -6,13 +6,13 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 16:23:52 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/09 11:18:55 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/14 11:32:37 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+static char	*ft_strcat(char *dest, const char *src)
 {
 	int	length_dest;
 	int	i;

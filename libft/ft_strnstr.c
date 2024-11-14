@@ -6,13 +6,13 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:33:25 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/07 15:45:52 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/14 11:33:34 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	my_function(const char *haystack, size_t *i, const char *needle)
+static int	my_function(const char *haystack, size_t *i, const char *needle)
 {
 	size_t	j;
 
