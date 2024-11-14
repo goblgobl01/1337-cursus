@@ -1,19 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/31 18:52:25 by mmaarafi          #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2024/11/14 13:18:05 by mmaarafi         ###   ########.fr        #
-=======
-#    Updated: 2024/11/14 11:47:37 by mmaarafi         ###   ########.fr        #
->>>>>>> 36e1a352989d2477a59389741f6c34b4235c6de5
-#                                                                              #
-# **************************************************************************** #
-
 NAME = libft.a
 
 SRCS = ft_isalnum.c ft_isprint.c ft_memcpy.c ft_putendl_fd.c ft_strchr.c ft_strlcat.c ft_strncmp.c ft_substr.c ft_atoi.c\
@@ -51,4 +35,5 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 re: fclean all
+
 .PHONY: clean re fclean
