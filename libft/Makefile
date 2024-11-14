@@ -6,7 +6,7 @@
 #    By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/31 18:52:25 by mmaarafi          #+#    #+#              #
-#    Updated: 2024/11/14 10:33:14 by mmaarafi         ###   ########.fr        #
+#    Updated: 2024/11/14 11:47:37 by mmaarafi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,3 +40,4 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 re: fclean all
+.PHONY: clean re fclean
