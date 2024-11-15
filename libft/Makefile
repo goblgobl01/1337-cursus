@@ -21,7 +21,7 @@ $(NAME): $(OBJECT_FILES)
 	ar -rcs $(NAME) $(OBJECT_FILES)
 
 %.o: %.c libft.h
-	CC $(CFLAGS) -c $< -o $@ -fsanitize=address -g
+	CC $(CFLAGS) -c $< -o $@
 
 bonus: .bonus_f
 
@@ -35,5 +35,3 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 re: fclean all
-
-.PHONY: clean re fclean
