@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 15:13:36 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/07 15:43:48 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:33:49 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,3 @@ char	*ft_strdup(char *src)
 	p[i] = 0;
 	return (p);
 }
-
-// int main()
-// {
-// 	printf("%s\n", strdup(NULL));
-// }

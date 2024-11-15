@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:33:25 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/14 11:33:34 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:34:37 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-// int	main(void)
-// {
-// 	printf("%s", strnstr(NULL, NULL, 0));
-// }

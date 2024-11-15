@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 15:18:43 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/14 11:31:39 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:33:35 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (strs);
 }
-
-// int main()
-// {
-//     char **ptr = ft_split("*", '*');
-//     printf("%s", *ptr);
-// }

@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 18:51:01 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/07 15:25:05 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:32:43 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-// int main()
-// {
-// 	printf("im here\n");
-// 	printf("%s", ft_memchr(NULL, 'c', 10));
-// }
-
-// int main()
-// {
-// 	int i = 0;
-// 	int array[] = {900, 500, 244, 3, 4};
-// 	int *another_array = memchr(array, 500, 5);
-
-// 	while(i < 3)
-// 	{
-// 		printf("%d\n", another_array[i]);
-// 		i++;
-// 	}
-// }

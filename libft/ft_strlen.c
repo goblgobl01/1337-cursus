@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 15:01:26 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/04 13:34:13 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:34:15 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,3 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-
-// int main()
-// {
-// 	// printf("%zu\n", ft_strlen(NULL));
-// 	printf("%zu\n", ft_strlen(NULL));
-// }

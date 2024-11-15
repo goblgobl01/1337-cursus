@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 11:53:38 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/07 15:30:21 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:32:53 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,45 +37,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-// int main()
-// {
-// 	printf("%d\n", ft_memcmp(NULL, NULL, 0));
-// }
-
-// #include <stdio.h>
-// #include <string.h>
-
-// void test_ft_memcmp(const void *s1, const void *s2, size_t n, int expected)
-// {
-//     int result = ft_memcmp(s1, s2, n);
-//     printf("ft_memcmp(%s, %s, %zu) = %d | Expected: %d | %s\n",
-//            (const char *)s1, (const char *)s2, n, result, expected,
-//            result == expected ? "PASS" : "FAIL");
-// }
-
-// int main()
-// {
-//     // Case 1: Identical strings
-//     test_ft_memcmp("abc", "abc", 3, 0);
-
-//     // Case 2: Different strings (first byte differs)
-//     test_ft_memcmp("abc", "xbc", 3, 'a' - 'x');
-
-//     // Case 3: Different strings (last byte differs)
-//     test_ft_memcmp("abc", "abd", 3, 'c' - 'd');
-
-//     // Case 4: Same prefix, n is shorter than the length of strings
-//     test_ft_memcmp("abcdef", "abcxyz", 3, 0);
-
-//     // Case 5: Different length strings, where comparison is limited by `n`
-//     test_ft_memcmp("abc", "abcdef", 3, 0);
-
-//     // Case 6: Comparison stops before `\0`
-//     test_ft_memcmp("abc", "abc\0xyz", 5, 0);
-
-//     // Case 7: `n` is zero
-//     test_ft_memcmp("abc", "xyz", 0, 0);
-
-//     return (0);
-// }

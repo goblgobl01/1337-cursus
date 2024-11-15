@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 15:21:01 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/08 10:40:09 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:34:55 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	p[i] = '\0';
 	return (p);
 }
-
-// int main()
-// {
-// 	printf("hello again\n");
-// 	ft_substr(NULL, 4, 40);
-// }

@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 18:41:38 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/10/31 13:49:59 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:34:22 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	ptr[i] = 0;
 	return (ptr);
 }
-// char fun_32(unsigned int n, char c)
-// {
-// 	c = c - 32;
-// 	return (c);
-// }
-
-// int main()
-// {
-// 	char *str = "abcdefg";
-// 	ft_strmapi(str, fun_32);
-// }

@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 15:52:01 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/03 13:19:25 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:32:15 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,3 @@ char	*ft_itoa(int n)
 	string_filler_3000(ptr, n, count);
 	return (ptr);
 }
-
-// int main()
-// {
-// 	printf("%s", ft_itoa(-2147483648));
-// 	return (0);
-// }

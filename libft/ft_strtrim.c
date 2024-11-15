@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:18:13 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/14 11:34:18 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:34:50 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ptr[i] = 0;
 	return (ptr);
 }
-
-// int main()
-// {
-// 	char *s = "#_#abcde#_#";
-// 	char *set = "#_";
-// 	ft_strtrim(s, set);
-// }

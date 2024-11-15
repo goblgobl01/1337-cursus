@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:20:04 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/07 15:02:24 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:34:08 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return ((unsigned int)ft_strlen(src));
 }
-
-// int main()
-// {
-// 	char dest[] = "he";
-// 	char source[] = "hihello";
-// 	int retur;
-
-// 	retur = strlcpy(dest, source, 1);
-// 	printf("this is the string: \"%s\",
-// this the return (value: %d", dest, retur));
-// }

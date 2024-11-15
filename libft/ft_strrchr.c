@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 18:34:46 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/11/03 11:15:21 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:34:42 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-// int main()
-// {
-// 	char buffer[] = "hello";
-// 	printf("%s", ft_strchr(buffer, 'f'));
-// }
