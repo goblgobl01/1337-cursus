@@ -31,20 +31,25 @@ char	*ft_strchr(const char *s, int c)
 }
 
 
-char	*ft_strjoin(char  *s1, char  *s2)
+char	*ft_strjoin(char  *stash, char  *buffer)
 {
 	int		length;
 	char	*str;
 
-	if (!s1 || !s2)
+	if (!stash && !buffer)
 		return (NULL);
-	length = ft_strlen(s1) + ft_strlen(s2);
+	if (!stash)
+		return (ft_strdup(buffer));
+	if (!buffer)
+		return (ft_strdup(stash));
+	length = ft_strlen(stash) + ft_strlen(buffer);
 	str = malloc(length + 1);
 	if (str == NULL)
 		return (NULL);
 	str[0] = '\0';
-	ft_strcat(str, s1);
-	ft_strcat(str, s2);
+	ft_strcat(str, stash);
+	ft_strcat(str, buffer);
+	free(stash);
 	return (str);
 }
 
@@ -55,24 +60,6 @@ size_t	ft_strlen(const char *s)
 	i = 0;
 	while (s[i] != '\0')
 		i++;
-	return (i);
-}
-
-int	find_start(const char *s1)
-{
-	int	i;
-
-	i = 0;
-	while (s1[i])
-	{
-		if (s1[i] != '\n')
-		{
-			i++;
-			continue ;
-		}
-		else
-			break ;
-	}
 	return (i);
 }
 
@@ -96,6 +83,26 @@ char	*ft_strdup(char *src)
 	return (p);
 }
 
+int	find_start(const char *s1)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i])
+	{
+		if (s1[i] != '\n')
+		{
+			i++;
+			continue ;
+		}
+		else
+			break ;
+	}
+	if(strlen(s1) != i)
+	  return(i + 1);
+	return (i);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		start;
@@ -109,13 +116,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	end = find_start(s1);
 	length = end - start;
-	if (start > end)
-		return (ft_strdup(""));
-	ptr = malloc(length + 2);
+	ptr = malloc(length + 1);
 	if (ptr == NULL)
 		return (NULL);
 	i = 0;
-	while (start <= end)
+	while (start < end)
 		ptr[i++] = s1[start++];
 	ptr[i] = 0;
 	return (ptr);
