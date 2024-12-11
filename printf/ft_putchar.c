@@ -6,13 +6,18 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:19:27 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/12/11 12:44:53 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/12/11 13:30:29 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	int returned_value;
+
+	returned_value = write(1, &c, 1);
+	if(returned_value == -1)
+		return (0);
+	return (returned_value);
 }
