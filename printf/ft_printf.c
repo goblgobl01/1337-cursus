@@ -28,7 +28,7 @@ int	ft_printf(const char *format, ...)
 			else if(format[i + 1] == 'p')
 			{
 				return_value = return_value + ft_putstr("0x");
-				return_value = return_value + ft_putnbr_base(va_arg(arguments, int), "0123456789abcdef");
+				return_value = return_value + ft_putnbr_base(va_arg(arguments, unsigned long), "0123456789abcdef");
 			}
 			else if(format[i + 1] == 'd')
 				return_value = return_value + ft_putnbr_base(va_arg(arguments, int), "0123456789");
@@ -37,9 +37,9 @@ int	ft_printf(const char *format, ...)
 			else if(format[i + 1] == 'u')
 				return_value = return_value + ft_putnbr_base((unsigned int)va_arg(arguments, int), "0123456789");
 			else if(format[i + 1] == 'x')
-				return_value = ft_putnbr_base(va_arg(arguments, int), "0123456789abcdef");
+				return_value = return_value + ft_putnbr_base(va_arg(arguments, unsigned int), "0123456789abcdef");
 			else if(format[i + 1] == 'X')
-				return_value = ft_putnbr_base(va_arg(arguments, int), "0123456789ABCDEF");
+				return_value = return_value + ft_putnbr_base(va_arg(arguments, unsigned int), "0123456789ABCDEF");
 			else if(format[i + 1] == '%')
 				return_value = return_value + ft_putchar('%');
 			i += 2;
