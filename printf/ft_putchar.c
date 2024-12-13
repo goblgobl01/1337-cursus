@@ -14,10 +14,10 @@
 
 int	ft_putchar(char c)
 {
-	int returned_value;
+	int	returned_value;
 
 	returned_value = write(1, &c, 1);
-	if(returned_value == -1)
+	if (returned_value == -1)
 		return (0);
 	return (returned_value);
 }

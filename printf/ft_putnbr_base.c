@@ -1,6 +1,16 @@
-#include <unistd.h>
-#include <stdlib.h>
-#include <limits.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/13 10:14:16 by mmaarafi          #+#    #+#             */
+/*   Updated: 2024/12/13 10:35:03 by mmaarafi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_printf.h"
 
 int	ft_strlen(char *str)
 {
@@ -42,15 +52,11 @@ int	base_correctness(char *base)
 	return (i);
 }
 
-int	ft_putnbr_base(long int nbr, char *base)
+int	fun(unsigned long nbr, char *base)
 {
-	long int	overflow_case;
-	int			size;
-	int			bytes_written;
+	unsigned long	overflow_case;
+	int				bytes_written;
 
-	size = base_correctness(base);
-	if (size == 0)
-		return (0);
 	bytes_written = 0;
 	overflow_case = nbr;
 	if (overflow_case < 0)
@@ -59,15 +65,15 @@ int	ft_putnbr_base(long int nbr, char *base)
 		bytes_written++;
 		overflow_case = -overflow_case;
 	}
-	if (overflow_case < size)
+	if (overflow_case < 16)
 	{
 		write(1, &base[overflow_case], 1);
 		bytes_written++;
 	}
 	else
 	{
-		bytes_written += ft_putnbr_base(overflow_case / size, base);
-		write(1, &base[overflow_case % size], 1);
+		bytes_written += fun(overflow_case / 16, base);
+		write(1, &base[overflow_case % 16], 1);
 		bytes_written++;
 	}
 	return (bytes_written);
