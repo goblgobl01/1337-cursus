@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 10:31:14 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/12/14 22:05:10 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/12/14 22:48:39 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,21 +56,13 @@ int	ft_printf(const char *format, ...)
 		{
 			ft_putchar(format[i++]);
 			val++;
-			continue ;
 		}
 		else
 		{
 			if (format[i + 1] != 0)
-				val += fun2(arg, format[i + 1]);
-			i += 2;
+				val += fun2(arg, format[++i]);
+			i++;
 		}
 	}
-	va_end(arg);
-	return (val);
-}
-int main()
-{
-
-	ft_printf("sf%");
-	
+	return (va_end(arg), val);
 }
