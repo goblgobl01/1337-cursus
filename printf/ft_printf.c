@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 10:31:14 by mmaarafi          #+#    #+#             */
-/*   Updated: 2024/12/13 10:47:46 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2024/12/14 22:05:10 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,17 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 		{
-			val += fun2(arg, format[i + 1]);
+			if (format[i + 1] != 0)
+				val += fun2(arg, format[i + 1]);
 			i += 2;
 		}
 	}
+	va_end(arg);
 	return (val);
+}
+int main()
+{
+
+	ft_printf("sf%");
+	
 }
