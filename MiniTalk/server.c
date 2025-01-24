@@ -3,9 +3,9 @@
 void signal_handler(int sig)
 {
 	if (sig == SIGUSR1)
-	{
 		printf("i have received SIGUSR1 signal\n");
-	}
+	else if (sig == SIGUSR2)
+		printf("i have received sigusr 2 signal\n");
 }
 
 int main()
@@ -23,8 +23,15 @@ int main()
 		exit(EXIT_FAILURE);
 	}
 
-	pid = getpid();
+	if(sigaction(SIGUSR2, &sa, NULL) == -1)
+	{
+		perror("sigaction");
+		exit(EXIT_FAILURE);
+	}
+
+	pid = getpid(); 
 
 	printf("this is my pid: %d\n", pid);
-	pause();
+	while (1)
+		pause();
 }
