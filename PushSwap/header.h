@@ -14,7 +14,13 @@
 # define HEADER_H
 
 # include <stdio.h>
+struct node
+{
+	int data;
+	struct node *next;
+	struct node *prev;
+} l_list;
+
 
 char	**ft_split(char const *s, char c);
-
 #endif
