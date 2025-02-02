@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   lstclear.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/02 17:37:28 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/02 20:16:45 by mmaarafi         ###   ########.fr       */
+/*   Created: 2024/11/09 11:49:50 by mmaarafi          #+#    #+#             */
+/*   Updated: 2025/02/02 20:17:15 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "header.h"
 
-# include <stdio.h>
-
-typedef struct s_list
+void	ft_lstclear(t_list **lst)
 {
-	int			data;
-	struct node	*next;
-}t_list;
+	t_list	*ptr;
 
-char	**ft_split(char const *s, char c);
-void	ft_lstclear(t_list **lst, void (*del)(void*));
-void	ft_lstadd_back(t_list **lst, t_list *new);
-#endif
+	if (!lst)
+		return ;
+	if (!*lst)
+		return ;
+	while (*lst)
+	{
+		ptr = (*lst)->next;
+		free(*lst);
+		*lst = ptr;
+	}
+}

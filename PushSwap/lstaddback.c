@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   lstaddback.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/02 17:37:28 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/02 20:16:45 by mmaarafi         ###   ########.fr       */
+/*   Created: 2024/11/08 14:06:43 by mmaarafi          #+#    #+#             */
+/*   Updated: 2025/02/02 19:38:31 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "header.h"
 
-# include <stdio.h>
-
-typedef struct s_list
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int			data;
-	struct node	*next;
-}t_list;
+	t_list	*ptr;
+	t_list	*another_ptr;
 
-char	**ft_split(char const *s, char c);
-void	ft_lstclear(t_list **lst, void (*del)(void*));
-void	ft_lstadd_back(t_list **lst, t_list *new);
-#endif
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	ptr = *lst;
+	while (ptr != NULL)
+	{
+		another_ptr = ptr;
+		ptr = ptr->next;
+	}
+	another_ptr->next = new;
+}
