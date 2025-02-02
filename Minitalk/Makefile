@@ -6,7 +6,7 @@
 #    By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/12 18:34:59 by yazan             #+#    #+#              #
-#    Updated: 2025/01/26 10:04:28 by mmaarafi         ###   ########.fr        #
+#    Updated: 2025/02/02 15:37:10 by mmaarafi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME_SERVER = server
 SRC_CLIENT = client.c ft_atoi.c
 OBJ_CLIENT = $(SRC_CLIENT:.c=.o)
 
-SRC_SERVER = server.c
+SRC_SERVER = server.c ft_itoa.c ft_strlen.c
 OBJ_SERVER = $(SRC_SERVER:.c=.o)
 
 
