@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:18:34 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/02 21:14:10 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/02 21:35:26 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_list *add_arguments(char **strs)
 
 	while(*strs)
 	{
-		var = ft_itoa(strs);
+		var = ft_atoi(strs);
 		tmp->data = var;
 		tmp->next = NULL;
 		ft_lstadd_back(&head, tmp);

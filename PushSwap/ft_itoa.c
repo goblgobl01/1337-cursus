@@ -5,63 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/30 15:52:01 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/02 20:21:31 by mmaarafi         ###   ########.fr       */
+/*   Created: 2024/10/24 11:59:37 by mmaarafi          #+#    #+#             */
+/*   Updated: 2025/02/02 21:34:33 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-static int	count_words(int n)
+int	ft_atoi(const char *str)
 {
-	int	i;
+	long long	result;
+	int			sign;
 
-	i = 1;
-	while (n != 0)
+	sign = 1;
+	result = 0;
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		n = n / 10;
-		i++;
+		if (*str++ == '-')
+			sign = sign * -1;
 	}
-	return (i - 1);
-}
-
-static void	string_filler_3000(char *ptr, long int n, int count)
-{
-	int	i;
-
-	i = 0;
-	if (n == 0)
+	while (*str >= '0' && *str <= '9')
 	{
-		ptr[i] = (n % 10) + '0';
-		i++;
+		if (result > (LONG_MAX - *str - '0') / 10)
+		{
+			if (sign == 1)
+				return (-1);
+			else
+				return (0);
+		}
+		result = result * 10 + *str++ - '0';
 	}
-	if (n < 0)
-	{
-		n = -n;
-		ptr[0] = '-';
-		i++;
-	}
-	while (n != 0)
-	{
-		ptr[count - 1] = (n % 10) + '0';
-		n = n / 10;
-		count--;
-		i++;
-	}
-	ptr[i] = 0;
-}
-
-char	*ft_itoa(int n)
-{
-	int		count;
-	char	*ptr;
-
-	count = count_words(n);
-	if (n <= 0)
-		count++;
-	ptr = malloc(count + 1);
-	if (ptr == NULL)
-		return (NULL);
-	string_filler_3000(ptr, n, count);
-	return (ptr);
+	return (result * sign);
 }
