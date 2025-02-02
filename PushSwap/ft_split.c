@@ -77,7 +77,7 @@ static void	*allocate_duplicate(const char *str, char c, int count, char **strs)
 }
 
 char	**ft_split(char const *s, char c)
-{
+~{
 	char	**strs;
 	int		count;
 

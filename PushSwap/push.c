@@ -34,35 +34,36 @@ int argument_check(char **str)
 	return (1);
 }
 
-t_list *add_arguments(char **strs)
+void *add_arguments(t_list **head, char **strs)
 {
 	int var;
-	t_list *head;
+	int i;
 	t_list *tmp;
 
-	while(*strs)
+	i = 0;
+	while(strs[i])
 	{
 		var = ft_atoi(*strs);
 		tmp = ft_lstnew(var);
-		ft_lstadd_back(&head, tmp);
-		strs++;
+		ft_lstadd_back(head, tmp);
+		i++;
 	}
-
-	return (head);
 }
 
-int main(int ac, char **av)
+int main()
 {
+	char	*av[] = {"1", "2", "+", NULL};
 	char	**strs;
 	int		i;
 	t_list	*head;
 
-	i = 2;
-	while (i < ac)
+	head = NULL;
+	i = 0;
+	while (i < 3)
 	{
 		strs = ft_split(av[i], ' ');
 		if(argument_check(strs))
-			head = add_arguments(strs);
+			add_arguments(&head, strs);
 		else
 		{
 			ft_lstclear(&head);
