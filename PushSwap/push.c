@@ -71,4 +71,10 @@ int main(int ac, char **av)
 		}
 		i++;
 	}
+
+	while(head)
+	{
+		printf("%d \n", head->data);
+		head = head->next;
+	}
 }
