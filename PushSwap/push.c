@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:18:34 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/02 21:35:26 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/02 21:52:04 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_list *add_arguments(char **strs)
 
 	while(*strs)
 	{
-		var = ft_atoi(strs);
+		var = ft_atoi(*strs);
 		tmp->data = var;
 		tmp->next = NULL;
 		ft_lstadd_back(&head, tmp);
@@ -61,7 +61,7 @@ int main(int ac, char **av)
 	i = 2;
 	while (i < ac)
 	{
-		strs = ft_split(av[i], " ");
+		strs = ft_split(av[i], ' ');
 		if(argument_check(strs))
 			head = add_arguments(strs);
 		else
