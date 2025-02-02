@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:37:28 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/02 17:39:06 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/02 18:57:26 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 # define HEADER_H
 
 # include <stdio.h>
-struct node
-{
-	int data;
-	struct node *next;
-	struct node *prev;
-} l_list;
 
+typedef struct s_list
+{
+	int			data;
+	struct node	*next;
+	struct node	*prev;
+}t_list;
 
 char	**ft_split(char const *s, char c);
 #endif
