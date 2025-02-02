@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   lstnew.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/02 17:37:28 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/02 22:10:04 by mmaarafi         ###   ########.fr       */
+/*   Created: 2024/11/08 13:38:52 by mmaarafi          #+#    #+#             */
+/*   Updated: 2025/02/02 22:09:21 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "header.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <limits.h>
-
-typedef struct s_list
+t_list	*ft_lstnew(int data)
 {
-	int				data;
-	struct s_list	*next;
-}t_list;
+	t_list	*head;
 
-char	**ft_split(char const *s, char c);
-void	ft_lstclear(t_list **lst);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-int		ft_atoi(const char *str);
-t_list	*ft_lstnew(int data);
-
-#endif
+	head = malloc(sizeof(t_list));
+	if (head == NULL)
+		return (NULL);
+	head->data = data;
+	head->next = NULL;
+	return (head);
+}
