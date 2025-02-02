@@ -2,13 +2,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug",
+            "name": "Debug PushSwap",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/program",
-            "args": ["arg1", "arg2"], 
+            "program": "${workspaceFolder}/PushSwap/program",
+            "args": ["1 2 3 4", "1"], 
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/PushSwap",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",

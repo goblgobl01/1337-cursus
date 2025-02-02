@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build PushSwap",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-g", 
+                "${workspaceFolder}/PushSwap/*.c", 
+                "-o", 
+                "${workspaceFolder}/PushSwap/program", 
+                "-Wall", 
+                "-Wextra", 
+                "-Werror"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
