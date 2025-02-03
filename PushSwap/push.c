@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:18:34 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/02 22:09:31 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:43:32 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int argument_check(char **str)
 	return (1);
 }
 
-void *add_arguments(t_list **head, char **strs)
+void add_arguments(t_list **head, char **strs)
 {
 	int var;
 	int i;
@@ -77,4 +77,6 @@ int main()
 		printf("%d \n", head->data);
 		head = head->next;
 	}
+
+	return (0);
 }
