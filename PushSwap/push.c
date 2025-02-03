@@ -43,24 +43,25 @@ void add_arguments(t_list **head, char **strs)
 	i = 0;
 	while(strs[i])
 	{
-		var = ft_atoi(*strs);
+		var = ft_atoi(strs[i]);
 		tmp = ft_lstnew(var);
 		ft_lstadd_back(head, tmp);
 		i++;
 	}
 }
 
-int main(int ac, char **av)
+int main(/*int ac, char **av*/)
 {
+	char *av = "1 2";
 	char	**strs;
 	int		i;
 	t_list	*head;
 
 	head = NULL;
 	i = 1;
-	while (i < ac)
+	while (i < 2)
 	{
-		strs = ft_split(av[i], ' ');
+		strs = ft_split(av, ' ');
 		if(argument_check(strs))
 			add_arguments(&head, strs);
 		else
