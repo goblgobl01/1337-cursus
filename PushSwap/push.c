@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:18:34 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/03 15:43:32 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:50:03 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void add_arguments(t_list **head, char **strs)
 
 int main()
 {
-	char	*av[] = {"1", "2", "+", NULL};
+	char	*av[] = {"1", "2", NULL};
 	char	**strs;
 	int		i;
 	t_list	*head;
