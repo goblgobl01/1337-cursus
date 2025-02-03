@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:18:34 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/03 15:50:03 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:56:36 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,15 @@ void add_arguments(t_list **head, char **strs)
 	}
 }
 
-int main()
+int main(int ac, char **av)
 {
-	char	*av[] = {"1", "2", NULL};
 	char	**strs;
 	int		i;
 	t_list	*head;
 
 	head = NULL;
-	i = 0;
-	while (i < 2)
+	i = 1;
+	while (i < ac)
 	{
 		strs = ft_split(av[i], ' ');
 		if(argument_check(strs))
