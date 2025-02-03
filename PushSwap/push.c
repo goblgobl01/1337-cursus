@@ -59,7 +59,7 @@ int main()
 
 	head = NULL;
 	i = 0;
-	while (i < 3)
+	while (i < 2)
 	{
 		strs = ft_split(av[i], ' ');
 		if(argument_check(strs))
