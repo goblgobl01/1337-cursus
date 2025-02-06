@@ -47,10 +47,10 @@ void	free_strs(char **strs)
 	free(strs), strs = NULL;
 }
 
-void	add_arguments(t_list **head, char **strs)
+void	add_arguments(t_stacka **head, char **strs)
 {
 	long long	var;
-	t_list		*tmp;
+	t_stacka		*tmp;
 	int i;
 
 	i = 0;
@@ -71,10 +71,10 @@ void	add_arguments(t_list **head, char **strs)
 	free_strs(strs);
 }
 
-void	check_duplicate(t_list **head)
+void	check_duplicate(t_stacka **head)
 {
-	t_list	*tmp;
-	t_list	*another_tmp;
+	t_stacka	*tmp;
+	t_stacka	*another_tmp;
 	int		count;
 
 	tmp = *head;
@@ -102,7 +102,7 @@ int	main(int ac, char **av)
 {
 	char	**strs;
 	int		i;
-	t_list	*head;
+	t_stacka	*head;
 
 	head = NULL;
 	i = 1;
@@ -121,7 +121,7 @@ int	main(int ac, char **av)
 	}
 	check_duplicate(&head);
 
-	t_list *tmp;
+	t_stacka *tmp;
 
 	tmp = head;
 	while(tmp)

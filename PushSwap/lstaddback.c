@@ -12,10 +12,10 @@
 
 #include "header.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_stacka **lst, t_stacka *new)
 {
-	t_list	*ptr;
-	t_list	*another_ptr;
+	t_stacka	*ptr;
+	t_stacka	*another_ptr;
 
 	if (!lst || !new)
 		return ;

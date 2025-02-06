@@ -22,12 +22,12 @@ typedef struct s_list
 {
 	int				data;
 	struct s_list	*next;
-}t_list;
+}t_stacka;
 
 char			**ft_split(char const *s, char c);
-void			ft_lstclear(t_list **lst);
-void			ft_lstadd_back(t_list **lst, t_list *new);
+void			ft_lstclear(t_stacka **lst);
+void			ft_lstadd_back(t_stacka **lst, t_stacka *new);
 long long		ft_atoi(const char *str);
-t_list			*ft_lstnew(int data);
+t_stacka			*ft_lstnew(int data);
 
 #endif

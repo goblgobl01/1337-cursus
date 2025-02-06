@@ -12,9 +12,9 @@
 
 #include "header.h"
 
-void	ft_lstclear(t_list **lst)
+void	ft_lstclear(t_stacka **lst)
 {
-	t_list	*ptr;
+	t_stacka	*ptr;
 
 	if (!lst)
 		return ;

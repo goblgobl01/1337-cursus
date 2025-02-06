@@ -12,11 +12,11 @@
 
 #include "header.h"
 
-t_list	*ft_lstnew(int data)
+t_stacka	*ft_lstnew(int data)
 {
-	t_list	*head;
+	t_stacka	*head;
 
-	head = malloc(sizeof(t_list));
+	head = malloc(sizeof(t_stacka));
 	if (head == NULL)
 		return (NULL);
 	head->data = data;
