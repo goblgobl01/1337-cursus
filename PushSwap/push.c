@@ -7,5 +7,5 @@ void	push(t_stack **stack1, t_stack **stack2)
 	if (!stack1 || !(*stack1))
 		return ;
 	tmp = ft_lstnew((*stack1)->data);
-	ft_lstadd_back(&stack2, tmp);
+	ft_lstadd_back(stack2, tmp);
 }

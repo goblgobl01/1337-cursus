@@ -122,7 +122,7 @@ int	main(int ac, char **av)
 		i++;
 	}
 	check_duplicate(&stack_a);
-	swap_a(&stack_a);
+	swap(&stack_a);
 	push(&stack_a, &stack_b);
 	t_stack *tmp;
 	tmp = stack_a;
@@ -138,5 +138,6 @@ int	main(int ac, char **av)
 		tmp = tmp->next;
 	}
 	ft_lstclear(&stack_a);
+	ft_lstclear(&stack_b);
 	return (0);
 }
