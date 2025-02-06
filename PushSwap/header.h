@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:37:28 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/06 20:11:42 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/06 20:34:56 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,5 @@ t_stack			*ft_lstnew(int data);
 void			swap(t_stack **stack_a);
 void			swap_both(t_stack **stack_a, t_stack **stack_b);
 void			push(t_stack **stack1, t_stack **stack2);
+void			rotate(t_stack **stack);
 #endif
