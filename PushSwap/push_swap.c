@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:18:34 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/06 21:35:55 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/06 21:46:49 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,23 +122,5 @@ int	main(int ac, char **av)
 		i++;
 	}
 	check_duplicate(&stack_a);
-	// swap(&stack_a);
-	// push(&stack_a, &stack_b);
-	rrotate(&stack_a);
-	t_stack *tmp;
-	tmp = stack_a;
-	while(tmp)
-	{
-		printf("stacka: %d\n", tmp->data);
-		tmp = tmp->next;
-	}
-	// tmp = stack_b;
-	// while(tmp)
-	// {
-	// 	printf("stackb: %d\n", tmp->data);
-	// 	tmp = tmp->next;
-	// }
-	ft_lstclear(&stack_a);
-	// ft_lstclear(&stack_b);
 	return (0);
 }

@@ -20,3 +20,9 @@ void	rrotate(t_stack **stack)
 	}
 	ft_lstadd_front(stack, tmp);
 }
+
+void	rrotate_both(t_stack **stacka, t_stack **stackb)
+{
+	rrotate(stacka);
+	rrotate(stackb);
+}

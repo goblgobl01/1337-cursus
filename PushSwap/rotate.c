@@ -21,3 +21,9 @@ void	rotate(t_stack **stack)
 	}
 	ft_lstclear(&tmp);
 }
+
+void	rotate_both(t_stack **stacka, t_stack **stackb)
+{
+	rotate(stacka);
+	rotate(stackb);
+}
