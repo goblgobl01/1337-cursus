@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:37:28 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/03 18:34:22 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/06 17:07:44 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ char			**ft_split(char const *s, char c);
 void			ft_lstclear(t_stacka **lst);
 void			ft_lstadd_back(t_stacka **lst, t_stacka *new);
 long long		ft_atoi(const char *str);
-t_stacka			*ft_lstnew(int data);
+t_stacka		*ft_lstnew(int data);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:18:34 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/03 18:49:32 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/06 17:10:04 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,19 @@ void	free_strs(char **strs)
 	i = 0;
 	while (strs[i])
 	{
-		free(strs[i]), strs[i] = NULL;
+		free (strs[i]);
+		strs[i] = NULL;
 		i++;
 	}
-	free(strs), strs = NULL;
+	free (strs);
+	strs = NULL;
 }
 
 void	add_arguments(t_stacka **head, char **strs)
 {
 	long long	var;
-	t_stacka		*tmp;
-	int i;
+	t_stacka	*tmp;
+	int			i;
 
 	i = 0;
 	while (strs[i])
@@ -75,7 +77,7 @@ void	check_duplicate(t_stacka **head)
 {
 	t_stacka	*tmp;
 	t_stacka	*another_tmp;
-	int		count;
+	int			count;
 
 	tmp = *head;
 	while (tmp)
@@ -100,8 +102,8 @@ void	check_duplicate(t_stacka **head)
 
 int	main(int ac, char **av)
 {
-	char	**strs;
-	int		i;
+	char		**strs;
+	int			i;
 	t_stacka	*head;
 
 	head = NULL;
@@ -120,16 +122,15 @@ int	main(int ac, char **av)
 		i++;
 	}
 	check_duplicate(&head);
-
-	t_stacka *tmp;
-
-	tmp = head;
-	while(tmp)
-	{
-		printf("%d\n", tmp->data);
-		tmp = tmp->next;
-	}
-
 	ft_lstclear(&head);
 	return (0);
 }
+
+	// t_stacka *tmp;
+
+	// tmp = head;
+	// while(tmp)
+	// {
+	// 	printf("%d\n", tmp->data);
+	// 	tmp = tmp->next;
+	// }
