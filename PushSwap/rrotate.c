@@ -16,6 +16,7 @@ void	rrotate(t_stack **stack)
 			ptr->next = NULL;
 			break;
 		}
+		ptr = ptr->next;
 	}
 	ft_lstadd_front(stack, tmp);
 }

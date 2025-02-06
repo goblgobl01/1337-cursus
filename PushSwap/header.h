@@ -34,5 +34,5 @@ void			swap_both(t_stack **stack_a, t_stack **stack_b);
 void			push(t_stack **stack1, t_stack **stack2);
 void			rotate(t_stack **stack);
 void			ft_lstadd_front(t_stack **lst, t_stack *new);
-void			rotate(t_stack **stack);
+void			rrotate(t_stack **stack);
 #endif
