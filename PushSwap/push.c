@@ -41,20 +41,22 @@ void	free_strs(char **strs)
 	i = 0;
 	while (strs[i])
 	{
-		free(strs[i]);
+		free(strs[i]), strs[i] = NULL;
 		i++;
 	}
-	free(strs);
+	free(strs), strs = NULL;
 }
 
 void	add_arguments(t_list **head, char **strs)
 {
 	long long	var;
 	t_list		*tmp;
+	int i;
 
-	while (*strs)
+	i = 0;
+	while (strs[i])
 	{
-		var = ft_atoi(*strs);
+		var = ft_atoi(strs[i]);
 		if (var > INT_MAX || var < INT_MIN)
 		{
 			write(2, "Error\n", 6);
@@ -63,7 +65,8 @@ void	add_arguments(t_list **head, char **strs)
 		}
 		tmp = ft_lstnew(var);
 		ft_lstadd_back(head, tmp);
-		strs++;
+		strs[i];
+		i++;
 	}
 	free_strs(strs);
 }
@@ -118,13 +121,15 @@ int	main(int ac, char **av)
 	}
 	check_duplicate(&head);
 
-	while(head)
+	t_list *tmp;
+
+	tmp = head;
+	while(tmp)
 	{
-		printf("%d\n", head->data);
-		head = head->next;
+		printf("%d\n", tmp->data);
+		tmp = tmp->next;
 	}
 
 	ft_lstclear(&head);
-	while(1);
 	return (0);
 }
