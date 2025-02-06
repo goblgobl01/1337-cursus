@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:18:34 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/06 17:10:04 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/06 17:23:48 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ void	add_arguments(t_stacka **head, char **strs)
 		}
 		tmp = ft_lstnew(var);
 		ft_lstadd_back(head, tmp);
-		strs[i];
 		i++;
 	}
 	free_strs(strs);
@@ -122,15 +121,14 @@ int	main(int ac, char **av)
 		i++;
 	}
 	check_duplicate(&head);
+	t_stacka *tmp;
+
+	tmp = head;
+	while(tmp)
+	{
+		printf("%d\n", tmp->data);
+		tmp = tmp->next;
+	}
 	ft_lstclear(&head);
 	return (0);
 }
-
-	// t_stacka *tmp;
-
-	// tmp = head;
-	// while(tmp)
-	// {
-	// 	printf("%d\n", tmp->data);
-	// 	tmp = tmp->next;
-	// }
