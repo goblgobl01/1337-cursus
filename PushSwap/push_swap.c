@@ -122,8 +122,9 @@ int	main(int ac, char **av)
 		i++;
 	}
 	check_duplicate(&stack_a);
-	swap(&stack_a);
-	push(&stack_a, &stack_b);
+	// swap(&stack_a);
+	// push(&stack_a, &stack_b);
+	rotate(&stack_a);
 	t_stack *tmp;
 	tmp = stack_a;
 	while(tmp)
@@ -131,13 +132,13 @@ int	main(int ac, char **av)
 		printf("stacka: %d\n", tmp->data);
 		tmp = tmp->next;
 	}
-	tmp = stack_b;
-	while(tmp)
-	{
-		printf("stackb: %d\n", tmp->data);
-		tmp = tmp->next;
-	}
+	// tmp = stack_b;
+	// while(tmp)
+	// {
+	// 	printf("stackb: %d\n", tmp->data);
+	// 	tmp = tmp->next;
+	// }
 	ft_lstclear(&stack_a);
-	ft_lstclear(&stack_b);
+	// ft_lstclear(&stack_b);
 	return (0);
 }
