@@ -22,18 +22,12 @@ typedef struct s_stacka
 {
 	int				data;
 	struct s_stacka	*next;
-}t_stacka;
-
-typedef struct s_stackb
-{
-	int				data;
-	struct s_stackb	*next;
-}t_stackb;
+}t_stack;
 
 char			**ft_split(char const *s, char c);
-void			ft_lstclear(t_stacka **lst);
-void			ft_lstadd_back(t_stacka **lst, t_stacka *new);
+void			ft_lstclear(t_stack **stack_a);
+void			ft_lstadd_back(t_stack **stack_a, t_stack *new);
 long long		ft_atoi(const char *str);
-t_stacka		*ft_lstnew(int data);
-
+t_stack		*ft_lstnew(int data);
+void			swap_a(t_stack **stack_a);
 #endif

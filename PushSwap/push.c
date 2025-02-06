@@ -49,10 +49,10 @@ void	free_strs(char **strs)
 	strs = NULL;
 }
 
-void	add_arguments(t_stacka **head, char **strs)
+void	add_arguments(t_stack **stack_a, char **strs)
 {
 	long long	var;
-	t_stacka	*tmp;
+	t_stack	*tmp;
 	int			i;
 
 	i = 0;
@@ -62,27 +62,27 @@ void	add_arguments(t_stacka **head, char **strs)
 		if (var > INT_MAX || var < INT_MIN)
 		{
 			write(2, "Error\n", 6);
-			ft_lstclear(head);
+			ft_lstclear(stack_a);
 			exit(0);
 		}
 		tmp = ft_lstnew(var);
-		ft_lstadd_back(head, tmp);
+		ft_lstadd_back(stack_a, tmp);
 		i++;
 	}
 	free_strs(strs);
 }
 
-void	check_duplicate(t_stacka **head)
+void	check_duplicate(t_stack **stack_a)
 {
-	t_stacka	*tmp;
-	t_stacka	*another_tmp;
+	t_stack	*tmp;
+	t_stack	*another_tmp;
 	int			count;
 
-	tmp = *head;
+	tmp = *stack_a;
 	while (tmp)
 	{
 		count = 0;
-		another_tmp = *head;
+		another_tmp = *stack_a;
 		while (another_tmp)
 		{
 			if (tmp->data == another_tmp->data)
@@ -92,7 +92,7 @@ void	check_duplicate(t_stacka **head)
 		if (count > 1)
 		{
 			write(2, "Error\n", 6);
-			ft_lstclear(head);
+			ft_lstclear(stack_a);
 			exit(0);
 		}
 		tmp = tmp->next;
@@ -103,32 +103,32 @@ int	main(int ac, char **av)
 {
 	char		**strs;
 	int			i;
-	t_stacka	*head;
+	t_stack	*stack_a;
 
-	head = NULL;
+	stack_a = NULL;
 	i = 1;
 	while (i < ac)
 	{
 		strs = ft_split(av[i], ' ');
 		if (argument_check(strs))
-			add_arguments(&head, strs);
+			add_arguments(&stack_a, strs);
 		else
 		{
 			write(2, "Error\n", 6);
-			ft_lstclear(&head);
+			ft_lstclear(&stack_a);
 			break ;
 		}
 		i++;
 	}
-	check_duplicate(&head);
-	t_stacka *tmp;
-
-	tmp = head;
+	check_duplicate(&stack_a);
+	swap_a(&stack_a);
+	t_stack *tmp;
+	tmp = stack_a;
 	while(tmp)
 	{
 		printf("%d\n", tmp->data);
 		tmp = tmp->next;
 	}
-	ft_lstclear(&head);
+	ft_lstclear(&stack_a);
 	return (0);
 }

@@ -12,18 +12,18 @@
 
 #include "header.h"
 
-void	ft_lstclear(t_stacka **lst)
+void	ft_lstclear(t_stack **stack_a)
 {
-	t_stacka	*ptr;
+	t_stack	*ptr;
 
-	if (!lst)
+	if (!stack_a)
 		return ;
-	if (!*lst)
+	if (!*stack_a)
 		return ;
-	while (*lst)
+	while (*stack_a)
 	{
-		ptr = (*lst)->next;
-		free(*lst);
-		*lst = ptr;
+		ptr = (*stack_a)->next;
+		free(*stack_a);
+		*stack_a = ptr;
 	}
 }

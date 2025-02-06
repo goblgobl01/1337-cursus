@@ -12,19 +12,19 @@
 
 #include "header.h"
 
-void	ft_lstadd_back(t_stacka **lst, t_stacka *new)
+void	ft_lstadd_back(t_stack **stack_a, t_stack *new)
 {
-	t_stacka	*ptr;
-	t_stacka	*another_ptr;
+	t_stack	*ptr;
+	t_stack	*another_ptr;
 
-	if (!lst || !new)
+	if (!stack_a || !new)
 		return ;
-	if (*lst == NULL)
+	if (*stack_a == NULL)
 	{
-		*lst = new;
+		*stack_a = new;
 		return ;
 	}
-	ptr = *lst;
+	ptr = *stack_a;
 	while (ptr != NULL)
 	{
 		another_ptr = ptr;

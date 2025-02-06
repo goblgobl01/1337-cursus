@@ -12,14 +12,14 @@
 
 #include "header.h"
 
-t_stacka	*ft_lstnew(int data)
+t_stack	*ft_lstnew(int data)
 {
-	t_stacka	*head;
+	t_stack	*stack_a;
 
-	head = malloc(sizeof(t_stacka));
-	if (head == NULL)
+	stack_a = malloc(sizeof(t_stack));
+	if (stack_a == NULL)
 		return (NULL);
-	head->data = data;
-	head->next = NULL;
-	return (head);
+	stack_a->data = data;
+	stack_a->next = NULL;
+	return (stack_a);
 }
