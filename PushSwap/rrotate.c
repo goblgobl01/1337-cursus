@@ -1,6 +1,6 @@
 #include "header.h"
 
-void	rotate(t_stack **stack)
+void	rrotate(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack *ptr;
