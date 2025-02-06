@@ -18,11 +18,17 @@
 # include <limits.h>
 # include <unistd.h>
 
-typedef struct s_list
+typedef struct s_stacka
 {
 	int				data;
-	struct s_list	*next;
+	struct s_stacka	*next;
 }t_stacka;
+
+typedef struct s_stackb
+{
+	int				data;
+	struct s_stackb	*next;
+}t_stackb;
 
 char			**ft_split(char const *s, char c);
 void			ft_lstclear(t_stacka **lst);
