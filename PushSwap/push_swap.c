@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:18:34 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/07 15:22:44 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/07 15:40:44 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ int	main(int ac, char **av)
 		}
 		i++;
 	}
-	mini_get_next_line();
 	check_duplicate(&stack_a);
+	mini_get_next_line();
 	return (0);
 }
