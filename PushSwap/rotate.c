@@ -19,6 +19,7 @@ void	rotate(t_stack **stack)
 			break;
 		}
 	}
+	mini_get_next_line();
 	ft_lstclear(&tmp);
 }
 
