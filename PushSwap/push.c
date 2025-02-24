@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/24 13:50:44 by mmaarafi          #+#    #+#             */
+/*   Updated: 2025/02/24 13:51:01 by mmaarafi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
-void	pa(t_stack **stack1, t_stack **stack2) // stack_b stack_a
+void	pa(t_stack **stack1, t_stack **stack2)
 {
 	t_stack	*tmp;
 
@@ -13,7 +25,7 @@ void	pa(t_stack **stack1, t_stack **stack2) // stack_b stack_a
 	write(1, "pa\n", 3);
 }
 
-void	pb(t_stack **stack1, t_stack **stack2) //stack_a stack_b
+void	pb(t_stack **stack1, t_stack **stack2)
 {
 	t_stack	*tmp;
 

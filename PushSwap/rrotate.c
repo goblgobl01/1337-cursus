@@ -1,20 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rrotate.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/24 13:53:03 by mmaarafi          #+#    #+#             */
+/*   Updated: 2025/02/24 13:53:46 by mmaarafi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
 void	rra(t_stack **stack)
 {
 	t_stack	*tmp;
-	t_stack *ptr;
+	t_stack	*ptr;
 
 	if (!stack || !(*stack) || !((*stack)->next))
 		return ;
 	ptr = *stack;
-	while(ptr)
+	while (ptr)
 	{
-		if((ptr->next)->next == NULL)
+		if ((ptr->next)->next == NULL)
 		{
 			tmp = ptr->next;
 			ptr->next = NULL;
-			break;
+			break ;
 		}
 		ptr = ptr->next;
 	}
@@ -25,18 +37,18 @@ void	rra(t_stack **stack)
 void	rrb(t_stack **stack)
 {
 	t_stack	*tmp;
-	t_stack *ptr;
+	t_stack	*ptr;
 
 	if (!stack || !(*stack) || !((*stack)->next))
 		return ;
 	ptr = *stack;
-	while(ptr)
+	while (ptr)
 	{
-		if((ptr->next)->next == NULL)
+		if ((ptr->next)->next == NULL)
 		{
 			tmp = ptr->next;
 			ptr->next = NULL;
-			break;
+			break ;
 		}
 		ptr = ptr->next;
 	}

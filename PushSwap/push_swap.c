@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:18:34 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/24 13:37:42 by codespace        ###   ########.fr       */
+/*   Updated: 2025/02/24 13:51:51 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	check_duplicate(t_stack **stack_a)
 {
 	t_stack	*tmp;
 	t_stack	*another_tmp;
-	int			count;
+	int		count;
 
 	tmp = *stack_a;
 	while (tmp)
@@ -104,7 +104,7 @@ int	main(int ac, char **av)
 	char		**strs;
 	int			i;
 	t_stack		*stack_a;
-	t_stack 	*stack_b;
+	t_stack		*stack_b;
 
 	stack_a = NULL;
 	stack_b = NULL;
