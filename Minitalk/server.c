@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 15:17:36 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/06 15:22:12 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/22 09:13:03 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ int	main(void)
 	write(1, "pid: ", 5);
 	write(1, str, ft_strlen(str));
 	write(1, "\n", 1);
-	while (1)
+	while (1);
 		pause();
 }

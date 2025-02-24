@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:18:34 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/07 15:40:44 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/24 13:37:42 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	free_strs(char **strs)
 void	add_arguments(t_stack **stack_a, char **strs)
 {
 	long long	var;
-	t_stack	*tmp;
+	t_stack		*tmp;
 	int			i;
 
 	i = 0;
@@ -107,6 +107,7 @@ int	main(int ac, char **av)
 	t_stack 	*stack_b;
 
 	stack_a = NULL;
+	stack_b = NULL;
 	i = 1;
 	while (i < ac)
 	{
@@ -121,7 +122,10 @@ int	main(int ac, char **av)
 		}
 		i++;
 	}
-	check_duplicate(&stack_a);
-	mini_get_next_line();
+	check_duplicate(&stack_a); 
+	indexing(&stack_a);
+	pushing_b(&stack_a, &stack_b);
+	pushing_a(&stack_a, &stack_b);
+	ft_lstclear(&stack_a);
 	return (0);
 }
