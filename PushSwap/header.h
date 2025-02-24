@@ -13,7 +13,6 @@
 #ifndef HEADER_H
 # define HEADER_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
 # include <unistd.h>
