@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:37:28 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/24 11:55:28 by codespace        ###   ########.fr       */
+/*   Updated: 2025/02/24 20:50:30 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,8 @@ void			indexing(t_stack **stack_a);
 void			pushing_b(t_stack **stack_a, t_stack **stack_b);
 void			pushing_a(t_stack **stack_a, t_stack **stack_b);
 int				ft_lstsize(t_stack *lst);
+void			sa(t_stack **stack);
+void			sb(t_stack **stack);
+void			ss(t_stack **stack_a, t_stack **stack_b);
 
 #endif
