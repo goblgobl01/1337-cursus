@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:37:28 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/24 20:50:30 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/25 15:52:41 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ int				ft_lstsize(t_stack *lst);
 void			sa(t_stack **stack);
 void			sb(t_stack **stack);
 void			ss(t_stack **stack_a, t_stack **stack_b);
+void			algorithms(t_stack **stack_a, t_stack **stack_b);
 
 #endif

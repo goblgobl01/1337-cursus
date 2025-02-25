@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 13:54:17 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/25 13:14:31 by codespace        ###   ########.fr       */
+/*   Updated: 2025/02/25 16:00:18 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	sa(t_stack **stack)
 	ft_lstclear(&tmp);
 	write(1, "sa\n", 3);
 }
+
 void	sb(t_stack **stack)
 {
 	t_stack	*tmp;

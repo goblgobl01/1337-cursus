@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 10:33:13 by codespace         #+#    #+#             */
-/*   Updated: 2025/02/24 21:27:35 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/25 15:59:36 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ int	position(t_stack **stack_b)
 		tmpb = tmpb->next;
 		pos++;
 	}
-
 	return (0);
 }
 
