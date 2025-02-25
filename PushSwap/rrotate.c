@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 13:53:03 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/24 13:53:46 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/25 09:48:08 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	rra(t_stack **stack)
 	if (!stack || !(*stack) || !((*stack)->next))
 		return ;
 	ptr = *stack;
+	tmp = NULL;
 	while (ptr)
 	{
 		if ((ptr->next)->next == NULL)
@@ -30,7 +31,8 @@ void	rra(t_stack **stack)
 		}
 		ptr = ptr->next;
 	}
-	ft_lstadd_front(stack, tmp);
+	if (tmp)
+		ft_lstadd_front(stack, tmp);
 	write(1, "rra\n", 4);
 }
 
@@ -42,6 +44,7 @@ void	rrb(t_stack **stack)
 	if (!stack || !(*stack) || !((*stack)->next))
 		return ;
 	ptr = *stack;
+	tmp = NULL;
 	while (ptr)
 	{
 		if ((ptr->next)->next == NULL)
@@ -52,7 +55,8 @@ void	rrb(t_stack **stack)
 		}
 		ptr = ptr->next;
 	}
-	ft_lstadd_front(stack, tmp);
+	if (tmp)
+		ft_lstadd_front(stack, tmp);
 	write(1, "rrb\n", 4);
 }
 
