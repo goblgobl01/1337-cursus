@@ -176,6 +176,10 @@ int	main(int ac, char **av)
 		i++;
 	}
 	check_duplicate(&stack_a); 
+	algorithms(&stack_a, &stack_b);
 	ft_lstclear(&stack_a);
 	return (0);
 }
+
+// ./push_swap "" 1 
+// @goblgobl01 ➜ /workspaces/1337-cursus/PushSwap (master) $ ./push_swap "      " 1
