@@ -13,3 +13,5 @@ all: $(NAME)
 $(NAME): header.h $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
+clean:
+	rm -f $(NAME)

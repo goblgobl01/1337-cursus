@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 15:18:43 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/06 17:22:13 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/02/25 10:38:35 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,11 @@ char	**ft_split(char const *s, char c)
 	char	**strs;
 	int		count;
 
-	if (!s)
+	if (!s || *s == 0)
 		return (NULL);
 	count = my_count_words(s, c);
+	if (count == 0)
+		return (NULL);
 	strs = malloc(sizeof(char *) * (count + 1));
 	if (strs == NULL)
 		return (NULL);
