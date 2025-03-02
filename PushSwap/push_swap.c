@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:18:34 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/25 16:29:36 by codespace        ###   ########.fr       */
+/*   Updated: 2025/02/25 18:42:49 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+
+// void a()
+// {
+// 	system("leaks push_swap");
+// }
 
 int	argument_check(char **str)
 {
@@ -108,8 +113,8 @@ int	main(int ac, char **av)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	i = 1;
-	while (i < ac)
+	i = 0;
+	while (++i < ac)
 	{
 		strs = ft_split(av[i], ' ');
 		if (strs && argument_check(strs))
@@ -120,7 +125,6 @@ int	main(int ac, char **av)
 			ft_lstclear(&stack_a);
 			exit(0);
 		}
-		i++;
 	}
 	check_duplicate(&stack_a); 
 	algorithms(&stack_a, &stack_b);
