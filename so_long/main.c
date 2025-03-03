@@ -64,13 +64,13 @@ char *reading_map_file(char *str, t_data **all_data)
 	char	*ptr;
 	char	*big_line;
 	int		fd;
-	int		count;
 
 	fd = open(str, O_RDONLY);
 	ptr = get_next_line(fd);
 	big_line = NULL;
 	while(ptr)
 	{
+		(*all_data)->line_count++;
 		big_line = ft_strjoin(big_line, ptr);
 		free(ptr);
 		ptr = get_next_line(fd);
