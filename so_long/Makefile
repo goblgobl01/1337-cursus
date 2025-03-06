@@ -4,7 +4,8 @@ CC = cc
 
 CFLAGS = -g
 
-SRC = main.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
+SRC = main.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c \
+	  srcs/ft_split.c
 
 all: $(NAME)
 
