@@ -232,18 +232,18 @@ int main(int ac, char **av)
 {
 	t_data	*all_data;
 
-	// if (ac != 2 || !checking_arguments(av[1]))
-	// 	exit(0);
-	// all_data = malloc(sizeof(t_data));
-	// if(!all_data)
-	// 	exit(0);
-	// reading_map_file(av[1], &all_data);
-	// map_checking(&all_data);
-	mlx_t *mlx;
-	void *window;
+	if (ac != 2 || !checking_arguments(av[1]))
+		exit(0);
+	all_data = malloc(sizeof(t_data));
+	if(!all_data)
+		exit(0);
+	reading_map_file(av[1], &all_data);
+	map_checking(&all_data);
+	// mlx_t *mlx;
+	// void *window;
 
-	mlx = mlx_init(64, 64, "MLX42", 0);
-	if (!mlx)
-		printf("fhjjh\n");
-	mlx_loop(mlx);
+	// mlx = mlx_init(64, 64, "MLX42", 0);
+	// if (!mlx)
+	// 	printf("fhjjh\n");
+	// mlx_loop(mlx);
 }
