@@ -1,12 +1,12 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-#include <mlx.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include "get_next_line/get_next_line.h"
+#include "MLX/include/MLX42/MLX42.h"
 
 
 typedef struct s_struct
