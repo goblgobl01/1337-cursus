@@ -231,6 +231,9 @@ void	map_checking(t_data **all_data)
 int main(int ac, char **av)
 {
 	t_data	*all_data;
+	int i;
+
+	i = 0;
 
 	if (ac != 2 || !checking_arguments(av[1]))
 		exit(0);
@@ -239,6 +242,11 @@ int main(int ac, char **av)
 		exit(0);
 	reading_map_file(av[1], &all_data);
 	map_checking(&all_data);
+	while((all_data)->strs[i])
+	{
+		printf("%s\n", (all_data)->strs[i]);
+		i++;
+	}
 	// mlx_t *mlx;
 	// void *window;
 
