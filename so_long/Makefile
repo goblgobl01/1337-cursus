@@ -2,11 +2,10 @@ NAME = so_long
 
 CC = cc
 
-# $(LFLAG) $(MLX)
-# LFLAG= -Iinclude -framework Cocoa -framework OpenGL -framework IOKit
-# MLX=  -Iinclude/mlx42 MLX/build/libmlx42.a MLX/build/libglfw3.a
 
-CFLAGS = -g
+LFLAG= -Iinclude -framework Cocoa -framework OpenGL -framework IOKit
+MLX=  -Iinclude/mlx42 MLX/build/libmlx42.a MLX/build/libglfw3.a
+
 
 SRC = main.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c \
 	  srcs/ft_split.c
@@ -14,7 +13,7 @@ SRC = main.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c \
 all: $(NAME)
 
 $(NAME): header.h $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+	$(CC) $(SRC) $(LFLAG) $(MLX) -o $(NAME)
 
 clean:
 

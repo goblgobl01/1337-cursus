@@ -96,6 +96,7 @@ void	reading_map_file(char *str, t_data **all_data)
 	char	*ptr;
 	int		fd;
 
+	(*all_data)->line_count = 0;
 	fd = open(str, O_RDONLY);
 	ptr = get_next_line(fd);
 	(*all_data)->big_line = NULL;
@@ -107,6 +108,9 @@ void	reading_map_file(char *str, t_data **all_data)
 		ptr = get_next_line(fd);
 	}
 	close(fd);
+	(*all_data)->exit = 0;
+	(*all_data)->player = 0;
+	(*all_data)->collectible = 0;
 	if(!characters_checking((*all_data)->big_line, all_data))
 	{
 		write(2, "Error\nmap contain invalid character.", 41);
@@ -224,6 +228,8 @@ void	map_checking(t_data **all_data)
 	}
 	checking_walls(all_data);
 	locating_player_position(all_data);
+	(*all_data)->flood_fille_collectible = 0;
+	(*all_data)->flood_fille_exit = 0;
 	flood_fill(all_data, (*all_data)->strs, (*all_data)->p_pos_x, (*all_data)->p_pos_y);
 }
 
@@ -242,16 +248,11 @@ int main(int ac, char **av)
 		exit(0);
 	reading_map_file(av[1], &all_data);
 	map_checking(&all_data);
-	while((all_data)->strs[i])
-	{
-		printf("%s\n", (all_data)->strs[i]);
-		i++;
-	}
-	// mlx_t *mlx;
-	// void *window;
+	mlx_t *mlx;
+	void *window;
 
-	// mlx = mlx_init(64, 64, "MLX42", 0);
-	// if (!mlx)
-	// 	printf("fhjjh\n");
-	// mlx_loop(mlx);
+	mlx = mlx_init(64, 64, "MLX42", 0);
+	if (!mlx)
+		printf("fhjjh\n");
+	mlx_loop(mlx);
 }
