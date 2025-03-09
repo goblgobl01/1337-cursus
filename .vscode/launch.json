@@ -6,7 +6,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/so_long/so_long",
-            "args": ["/workspaces/1337-cursus/so_long/maps/map.ber"],
+            "args": ["/workspaces/1337-cursus/so_long/maps/.ber"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/PushSwap",
             "environment": [],
