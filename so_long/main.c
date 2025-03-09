@@ -7,10 +7,10 @@ int checking_arguments(char *str)
 	int		i;
 
 	length = ft_strlen(str);
-	string = "reb";
+	string = "reb.";
 	length--;
 	i = 0;
-	while(i < 3)
+	while(i < 4)
 	{
 		if (str[length] == *string)
 		{
@@ -318,14 +318,11 @@ int main(int ac, char **av)
 {
 	t_data	*all_data;
 	if (ac != 2 || !checking_arguments(av[1]))
-	{
-		printf("i exited");
 		exit(1);
-	}
-	// all_data = malloc(sizeof(t_data));
-	// if(!all_data)
-	// 	exit(0);
-	// reading_map_file(av[1], &all_data);
-	// map_checking(&all_data);
-	// all_about_mlx(all_data);
+	all_data = malloc(sizeof(t_data));
+	if(!all_data)
+		exit(0);
+	reading_map_file(av[1], &all_data);
+	map_checking(&all_data);
+	all_about_mlx(all_data);
 }
