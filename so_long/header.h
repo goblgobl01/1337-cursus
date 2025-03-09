@@ -11,16 +11,24 @@
 
 typedef struct s_struct
 {
-	char	**strs;
-	char	*big_line;
-	int		collectible;
-	int		exit;
-	int		player;
-	int		line_count;
-	int		p_pos_x;
-	int		p_pos_y;
-	int		flood_fille_exit;
-	int		flood_fille_collectible;
+	char		**strs;
+	char		*big_line;
+	int			collectible;
+	int			exit;
+	int			player;
+	int			height;
+	int			width;
+	int			p_pos_x;
+	int			p_pos_y;
+	int			flood_fille_exit;
+	int			flood_fille_collectible;
+	mlx_image_t	*sonic_image;
+	mlx_image_t	*ground_image;
+	mlx_image_t	*wall_image;
+	mlx_image_t	*collectible_image;
+	mlx_image_t	*exit_image;
+	mlx_t		*mlx;
+
 }t_data;
 
 char	*get_next_line(int fd);
