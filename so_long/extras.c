@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:32:12 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/09 23:55:17 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/03/10 00:09:58 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,22 @@ int	checking_arguments(char *str)
 	if (str[length] == '/')
 		return (0);
 	return (1);
+}
+
+void	checking_rows_width(t_data **data)
+{
+	int	i;
+
+	i = 0;
+	while ((*data)->map[i + 1])
+	{
+		if (ft_strlen((*data)->map[i]) == ft_strlen((*data)->map[i + 1]))
+			i++;
+		else
+		{
+			write(2, "Error\nmap must be rectangular.", 29);
+			free_strs((*data)->map);
+			exit(0);
+		}
+	}
 }

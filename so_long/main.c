@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:06:31 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/09 23:38:53 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/03/10 00:09:47 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,24 +46,6 @@ int	characters_checking(char *str, t_data **data)
 		i++;
 	}
 	return (1);
-}
-
-void	checking_rows_width(t_data **data)
-{
-	int	i;
-
-	i = 0;
-	while ((*data)->map[i + 1])
-	{
-		if (ft_strlen((*data)->map[i]) == ft_strlen((*data)->map[i + 1]))
-			i++;
-		else
-		{
-			write(2, "Error\nmap must be rectangular.", 29);
-			free_strs((*data)->map);
-			exit(0);
-		}
-	}
 }
 
 void	reading_map_file(char *str, t_data **data)
