@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:07:20 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/10 00:23:37 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:32:32 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,11 @@ void	draw_map(t_data *data)
 		{
 			if (data->map[y][x] == '1')
 				mlx_image_to_window((data->mlx), data->w_img, 64 * x, 64 * y);
-			if (data->map[y][x] == 'V')
+			if (data->map[y][x] == 'V' || data->map[y][x] == 'p' 
+				|| data->map[y][x] == 'e' || data->map[y][x] == 'c')
 				mlx_image_to_window((data->mlx), data->g_img, 64 * x, 64 * y);
 			if (data->map[y][x] == 'c')
-			{
-				mlx_image_to_window((data->mlx), data->g_img, 64 * x, 64 * y);
 				mlx_image_to_window((data->mlx), data->c_img, 64 * x, 64 * y);
-			}
-			if (data->map[y][x] == 'p')
-				mlx_image_to_window((data->mlx), data->g_img, 64 * x, 64 * y);
-			if (data->map[y][x] == 'e')
-			{
-				data->ex = x;
-				data->ey = y;
-				mlx_image_to_window((data->mlx), data->g_img, 64 * x, 64 * y);
-			}
 		}
 	}
 	mlx_image_to_window((data->mlx), data->s_img, 64 * data->px, 64 * data->py);
@@ -138,7 +128,11 @@ void	all_about_mlx(t_data *data)
 {
 	data->mlx = mlx_init(64 * data->width, 64 * data->height, "MLX42", 0);
 	if (!(data->mlx))
-		printf("error\n");
+	{
+		write(2, "Error\ncouldn't initialize mlx", 30);
+		free_everything(data);
+		exit(1);
+	}
 	draw_map(data);
 	mlx_key_hook(data->mlx, key_hooks, data);
 	mlx_loop(data->mlx);

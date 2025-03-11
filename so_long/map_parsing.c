@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:07:26 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/10 00:19:56 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:40:20 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	checking_walls(t_data **data)
 		!top_bottom_walls((*data)->map[(*data)->height - 1]))
 	{
 		write(2, "Error\nwalls error.", 18);
-		free_strs((*data)->map);
-		exit(0);
+		free_everything(*data);
+		exit(1);
 	}
 	i = 1;
 	(*data)->width = ft_strlen((*data)->map[0]);
@@ -45,8 +45,8 @@ void	checking_walls(t_data **data)
 			(*data)->map[i][(*data)->width - 1] != '1')
 		{
 			write(2, "Error\nwalls error.", 18);
-			free_strs((*data)->map);
-			exit(0);
+			free_everything(*data);
+			exit(1);
 		}
 		i++;
 	}
@@ -67,7 +67,11 @@ void	locating_player_position(t_data **data)
 			{
 				(*data)->px = x;
 				(*data)->py = y;
-				return ;
+			}
+			if ((*data)->map[y][x] == 'E')
+			{
+				(*data)->ex = x;
+				(*data)->ey = y;
 			}
 			x++;
 		}
@@ -86,12 +90,12 @@ void	flood_fill(t_data **data, char **strs, int x, int y)
 		if (strs[y][x] == 'C')
 		{
 			strs[y][x] = 'c';
-			(*data)->flood_fille_collectible++;
+			(*data)->ffc++;
 		}
 		if (strs[y][x] == 'E')
 		{
 			strs[y][x] = 'e';
-			(*data)->flood_fille_exit++;
+			(*data)->ffe++;
 		}
 		if (strs[y][x] == '0')
 			strs[y][x] = 'V';
@@ -118,12 +122,16 @@ void	map_checking(t_data **data)
 		(*data)->player != 1 || (*data)->exit != 1)
 	{
 		write(2, "Error\nmust have 1->E, 1->C, 1->P.", 34);
-		free_strs((*data)->map);
-		exit(0);
+		free_everything(*data);
+		exit(1);
 	}
 	checking_walls(data);
 	locating_player_position(data);
-	(*data)->flood_fille_collectible = 0;
-	(*data)->flood_fille_exit = 0;
 	flood_fill(data, (*data)->map, (*data)->px, (*data)->py);
+	if ((*data)->ffc != (*data)->collectible || (*data)->ffe != (*data)->exit)
+	{
+		write(2, "Error\ncollectible or exit not reachable.", 41);
+		free_everything(*data);
+		exit(1);
+	}
 }

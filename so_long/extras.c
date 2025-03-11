@@ -6,23 +6,34 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:32:12 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/10 00:09:58 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:42:12 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	free_strs(char **strs)
+void	free_everything(t_data *data)
 {
 	int	i;
 
 	i = 0;
-	while (strs[i])
+	if (data->map)
 	{
-		free(strs[i]);
-		i++;
+		while (data->map[i])
+		{
+			free(data->map[i]);
+			i++;
+		}
+		free(data->map);
 	}
-	free(strs);
+	if (data->s_img)
+		mlx_delete_image(data->mlx, data->s_img);
+	if (data->s_img)
+		mlx_delete_image(data->mlx, data->g_img);
+	if (data->s_img)
+		mlx_delete_image(data->mlx, data->w_img);
+	if (data->s_img)
+		mlx_delete_image(data->mlx, data->e_img);
 }
 
 void	intializing_images(t_data *data)
@@ -84,8 +95,23 @@ void	checking_rows_width(t_data **data)
 		else
 		{
 			write(2, "Error\nmap must be rectangular.", 29);
-			free_strs((*data)->map);
-			exit(0);
+			free_everything(*data);
+			exit(1);
 		}
 	}
 }
+
+void	intializing_all_variables(t_data **data)
+{
+	(*data)->map = NULL;
+	(*data)->big_line = NULL;
+	(*data)->s_img = NULL;
+	(*data)->g_img = NULL;
+	(*data)->w_img = NULL;
+	(*data)->c_img = NULL;
+	(*data)->e_img = NULL;
+	(*data)->mlx = NULL;
+	(*data)->ffc = 0;
+	(*data)->ffe = 0;
+}
+

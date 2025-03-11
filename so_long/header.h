@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:53:24 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/10 00:20:24 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:41:51 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ typedef struct s_struct
 	int			width;
 	int			px;
 	int			py;
-	int			flood_fille_exit;
-	int			flood_fille_collectible;
+	int			ffe;
+	int			ffc;
 	int			ex;
 	int			ey;
 	mlx_image_t	*s_img;
@@ -46,11 +46,12 @@ typedef struct s_struct
 
 char	*get_next_line(int fd);
 char	**ft_split(char const *s, char c);
-void	free_strs(char **strs);
 void	all_about_mlx(t_data *data);
 void	map_checking(t_data **data);
 void	intializing_images(t_data *data);
 int		checking_arguments(char *str);
 void	checking_rows_width(t_data **data);
+void	free_everything(t_data *data);
+void	intializing_all_variables(t_data **data);
 
 #endif
