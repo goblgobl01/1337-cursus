@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:53:24 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/11 20:48:00 by codespace        ###   ########.fr       */
+/*   Updated: 2025/03/11 20:58:11 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ typedef struct s_struct
 	int			ffc;
 	int			ex;
 	int			ey;
-	// mlx_image_t	*s_img;
-	// mlx_image_t	*g_img;
-	// mlx_image_t	*w_img;
-	// mlx_image_t	*c_img;
-	// mlx_image_t	*e_img;
-	// mlx_t		*mlx;
+	mlx_image_t	*s_img;
+	mlx_image_t	*g_img;
+	mlx_image_t	*w_img;
+	mlx_image_t	*c_img;
+	mlx_image_t	*e_img;
+	mlx_t		*mlx;
 
 }t_data;
 

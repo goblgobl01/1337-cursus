@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:06:31 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/11 20:57:29 by codespace        ###   ########.fr       */
+/*   Updated: 2025/03/11 22:01:07 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,24 +76,26 @@ void	reading_map_file(char *str, t_data **data)
 	}
 }
 
-// void leaks(void)
-// {
-// 	system("leaks so_long");
-// }
+void leaks(void)
+{
+	system("leaks so_long");
+}
 
 int	main(int ac, char **av)
 {
 	t_data	*data;
 
-	// atexit(leaks);
-	intializing_all_variables(&data);
+	atexit(leaks); 
 	if (ac != 2 || !checking_arguments(av[1]))
 		exit(1);
 	data = malloc(sizeof(t_data));
 	if (!data)
 		exit(1);
+	intializing_all_variables(&data);
 	reading_map_file(av[1], &data);
 	map_checking(&data);
 	all_about_mlx(data);
+	free_everything(data);
 	mlx_terminate(data->mlx);
+	exit(0);
 }
