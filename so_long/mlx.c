@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:07:20 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/09 23:50:00 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/03/10 00:23:37 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void	draw_map(t_data *data)
 				mlx_image_to_window((data->mlx), data->g_img, 64 * x, 64 * y);
 			if (data->map[y][x] == 'e')
 			{
-				data->e_pos_x = x;
-				data->e_pos_y = y;
+				data->ex = x;
+				data->ey = y;
 				mlx_image_to_window((data->mlx), data->g_img, 64 * x, 64 * y);
 			}
 		}
 	}
-	mlx_image_to_window((data->mlx), data->s_img, 64 * data->p_pos_x, 64 * data->p_pos_y);
+	mlx_image_to_window((data->mlx), data->s_img, 64 * data->px, 64 * data->py);
 }
 
 void	draw_collectible(t_data *data)
@@ -74,22 +74,22 @@ void	collectible_handling(t_data *data, char c)
 	data->collectible--;
 	if (c == 'U')
 	{
-		data->map[data->p_pos_y - 1][data->p_pos_x] = 'V';
+		data->map[data->py - 1][data->px] = 'V';
 		draw_collectible(data);
 	}
 	else if (c == 'D')
 	{
-		data->map[data->p_pos_y + 1][data->p_pos_x] = 'V';
+		data->map[data->py + 1][data->px] = 'V';
 		draw_collectible(data);
 	}
 	else if (c == 'L')
 	{
-		data->map[data->p_pos_y][data->p_pos_x -1] = 'V';
+		data->map[data->py][data->px -1] = 'V';
 		draw_collectible(data);
 	}
 	else if (c == 'R')
 	{
-		data->map[data->p_pos_y][data->p_pos_x + 1] = 'V';
+		data->map[data->py][data->px + 1] = 'V';
 		draw_collectible(data);
 	}
 }
@@ -101,36 +101,36 @@ void	key_hooks(mlx_key_data_t keydata, void *param)
 	(void) keydata;
 	data = param;
 	if (data->collectible == 0)
-		mlx_image_to_window((data->mlx), data->e_img, 64 * (data->e_pos_x), 64 * (data->e_pos_y));
-	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE) || ((data->p_pos_x == data->e_pos_x && (data->p_pos_y == data->e_pos_y))))
+		mlx_image_to_window((data->mlx), data->e_img, 64 * (data->ex), 64 * (data->ey));
+	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE) || ((data->px == data->ex && (data->py == data->ey))))
 		mlx_close_window(data->mlx);
-	if (mlx_is_key_down(data->mlx, MLX_KEY_UP) && data->map[data->p_pos_y - 1][data->p_pos_x] != '1')
+	if (mlx_is_key_down(data->mlx, MLX_KEY_UP) && data->map[data->py - 1][data->px] != '1')
 	{
-		if (data->map[data->p_pos_y - 1][data->p_pos_x] == 'c')
+		if (data->map[data->py - 1][data->px] == 'c')
 			collectible_handling(data, 'U');
 		(data->s_img)->instances[0].y -= 64;
-		data->p_pos_y--;
+		data->py--;
 	}
-	if (mlx_is_key_down(data->mlx, MLX_KEY_DOWN) && data->map[data->p_pos_y + 1][data->p_pos_x] != '1')
+	if (mlx_is_key_down(data->mlx, MLX_KEY_DOWN) && data->map[data->py + 1][data->px] != '1')
 	{
-		if (data->map[data->p_pos_y + 1][data->p_pos_x] == 'c')
+		if (data->map[data->py + 1][data->px] == 'c')
 			collectible_handling(data, 'D');
 		(data->s_img)->instances[0].y += 64;
-		data->p_pos_y++;
+		data->py++;
 	}
-	if (mlx_is_key_down(data->mlx, MLX_KEY_LEFT) && data->map[data->p_pos_y][data->p_pos_x - 1] != '1')
+	if (mlx_is_key_down(data->mlx, MLX_KEY_LEFT) && data->map[data->py][data->px - 1] != '1')
 	{
-		if (data->map[data->p_pos_y][data->p_pos_x -1] == 'c')
+		if (data->map[data->py][data->px -1] == 'c')
 			collectible_handling(data, 'L');
 		(data->s_img)->instances[0].x -= 64;
-		data->p_pos_x--;
+		data->px--;
 	}
-	if (mlx_is_key_down(data->mlx, MLX_KEY_RIGHT) && data->map[data->p_pos_y][data->p_pos_x + 1] != '1')
+	if (mlx_is_key_down(data->mlx, MLX_KEY_RIGHT) && data->map[data->py][data->px + 1] != '1')
 	{
-		if (data->map[data->p_pos_y][data->p_pos_x + 1] == 'c')
+		if (data->map[data->py][data->px + 1] == 'c')
 			collectible_handling(data, 'R');
 		(data->s_img)->instances[0].x += 64;
-		data->p_pos_x++;
+		data->px++;
 	}
 }
 
@@ -143,3 +143,4 @@ void	all_about_mlx(t_data *data)
 	mlx_key_hook(data->mlx, key_hooks, data);
 	mlx_loop(data->mlx);
 }
+

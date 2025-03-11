@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:53:24 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/10 00:10:11 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/03/10 00:20:24 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ typedef struct s_struct
 	int			player;
 	int			height;
 	int			width;
-	int			p_pos_x;
-	int			p_pos_y;
+	int			px;
+	int			py;
 	int			flood_fille_exit;
 	int			flood_fille_collectible;
-	int			e_pos_x;
-	int			e_pos_y;
+	int			ex;
+	int			ey;
 	mlx_image_t	*s_img;
 	mlx_image_t	*g_img;
 	mlx_image_t	*w_img;

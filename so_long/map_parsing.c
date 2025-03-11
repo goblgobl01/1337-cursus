@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:07:26 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/09 23:32:25 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/03/10 00:19:56 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ void	locating_player_position(t_data **data)
 		{
 			if ((*data)->map[y][x] == 'P')
 			{
-				(*data)->p_pos_x = x;
-				(*data)->p_pos_y = y;
+				(*data)->px = x;
+				(*data)->py = y;
 				return ;
 			}
 			x++;
@@ -125,5 +125,5 @@ void	map_checking(t_data **data)
 	locating_player_position(data);
 	(*data)->flood_fille_collectible = 0;
 	(*data)->flood_fille_exit = 0;
-	flood_fill(data, (*data)->map, (*data)->p_pos_x, (*data)->p_pos_y);
+	flood_fill(data, (*data)->map, (*data)->px, (*data)->py);
 }
