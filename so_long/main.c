@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:06:31 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/11 22:01:07 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/03/12 19:00:13 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,16 +76,10 @@ void	reading_map_file(char *str, t_data **data)
 	}
 }
 
-void leaks(void)
-{
-	system("leaks so_long");
-}
-
 int	main(int ac, char **av)
 {
 	t_data	*data;
 
-	atexit(leaks); 
 	if (ac != 2 || !checking_arguments(av[1]))
 		exit(1);
 	data = malloc(sizeof(t_data));

@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:32:12 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/11 22:54:22 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/03/12 18:59:33 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,19 +44,19 @@ void	intializing_images(t_data *data)
 
 	png = mlx_load_png("Textures/wall.png");
 	data->w_img = mlx_texture_to_image((data->mlx), png);
-	free(png);
+	mlx_delete_texture(png);
 	png = mlx_load_png("Textures/ground.png");
 	data->g_img = mlx_texture_to_image((data->mlx), png);
-	free(png);
+	mlx_delete_texture(png);
 	png = mlx_load_png("Textures/sonic.png");
 	data->s_img = mlx_texture_to_image((data->mlx), png);
-	free(png);
+	mlx_delete_texture(png);
 	png = mlx_load_png("Textures/collectible.png");
 	data->c_img = mlx_texture_to_image((data->mlx), png);
-	free(png);
+	mlx_delete_texture(png);
 	png = mlx_load_png("Textures/exit.png");
 	data->e_img = mlx_texture_to_image((data->mlx), png);
-	free(png);
+	mlx_delete_texture(png);
 }
 
 int	checking_arguments(char *str)
@@ -116,4 +116,3 @@ void	intializing_all_variables(t_data **data)
 	(*data)->ffc = 0;
 	(*data)->ffe = 0;
 }
-

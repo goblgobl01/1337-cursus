@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:07:20 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/11 21:59:45 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/03/12 19:20:59 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	draw_collectible(t_data *data)
 	data->c_img = NULL;
 	png = mlx_load_png("Textures/collectible.png");
 	data->c_img = mlx_texture_to_image((data->mlx), png);
-	free(png);
+	mlx_delete_texture(png);
 	while (++y < data->height)
 	{
 		x = -1;
@@ -84,12 +84,12 @@ void	collectible_handling(t_data *data, char c)
 	}
 }
 
-void move_player(t_data *data, char c)
+void	move_player(t_data *data, char c)
 {
 	const char	directions[] = {'U', 'D', 'L', 'R'};
 	const int	dx[] = {0, 0, -1, 1};
 	const int	dy[] = {-1, 1, 0, 0};
-	int 		i;
+	int			i;
 
 	i = 0;
 	while (i < 4)
@@ -102,12 +102,11 @@ void move_player(t_data *data, char c)
 			(data->s_img)->instances[0].y += dy[i] * 64;
 			data->px += dx[i];
 			data->py += dy[i];
-			break;
+			break ;
 		}
 		i++;
 	}
 }
-
 
 void	key_hooks(mlx_key_data_t keydata, void *param)
 {
@@ -116,9 +115,11 @@ void	key_hooks(mlx_key_data_t keydata, void *param)
 	(void) keydata;
 	data = param;
 	if (data->collectible == 0)
-		mlx_image_to_window((data->mlx), data->e_img, 64 * (data->ex), 64 * (data->ey));
+		mlx_image_to_window((data->mlx), data->e_img, 
+			64 * (data->ex), 64 * (data->ey));
 	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE) || 
-		(((data->px == data->ex && (data->py == data->ey))) && data->collectible == 0))
+		(((data->px == data->ex && 
+					(data->py == data->ey))) && data->collectible == 0))
 		mlx_close_window(data->mlx);
 	if (mlx_is_key_down(data->mlx, MLX_KEY_UP) && 
 		data->map[data->py - 1][data->px] != '1')
