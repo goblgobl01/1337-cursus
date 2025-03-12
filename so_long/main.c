@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:06:31 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/12 20:04:12 by codespace        ###   ########.fr       */
+/*   Updated: 2025/03/12 20:20:09 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,18 +54,19 @@ void	reading_map_file(char *str, t_data **data)
 	int		fd;
 	int		length;
 
-	(*data)->height = 0;
 	fd = open(str, O_RDONLY);
 	ptr = get_next_line(fd);
-	length = ft_strlen(ptr);
+	length = str_len(ptr);
 	while (ptr)
 	{
 		(*data)->height++;
 		(*data)->big_line = ft_strjoin((*data)->big_line, ptr);
 		free(ptr);
 		ptr = get_next_line(fd);
-		checking_rows_width(data, length, ft_strlen(ptr));
-		length = ft_strlen(ptr);
+		if(!ptr)
+			break ;
+		checking_rows_width(data, length, str_len(ptr));
+		length = str_len(ptr);
 	}
 	close(fd);
 	if (!characters_checking((*data)->big_line, data))

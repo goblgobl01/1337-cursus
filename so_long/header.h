@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:53:24 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/12 19:56:03 by codespace        ###   ########.fr       */
+/*   Updated: 2025/03/12 20:13:23 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ int		checking_arguments(char *str);
 void	checking_rows_width(t_data **data, int length1, int length2);
 void	free_everything(t_data *data);
 void	intializing_all_variables(t_data **data);
+size_t	str_len(const char *s);
 
 #endif

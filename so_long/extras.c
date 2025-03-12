@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:32:12 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/12 20:03:57 by codespace        ###   ########.fr       */
+/*   Updated: 2025/03/12 20:20:24 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,8 +106,18 @@ void	intializing_all_variables(t_data **data)
 	// (*data)->e_img = NULL;
 	// (*data)->mlx = NULL;
 	(*data)->exit = 0;
+	(*data)->height = 0;
 	(*data)->player = 0;
 	(*data)->collectible = 0;
 	(*data)->ffc = 0;
 	(*data)->ffe = 0;
+}
+size_t	str_len(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0' && s[i] != '\n')
+		i++;
+	return (i);
 }
