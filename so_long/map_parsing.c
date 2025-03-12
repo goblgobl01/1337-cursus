@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_parsing.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:07:26 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/11 20:40:20 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/03/12 20:00:11 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,13 @@ void	checking_walls(t_data **data)
 {
 	int	i;
 
+	i = 0;
+	while((*data)->map[i])
+	{
+		printf("%s\n", (*data)->map[i]);
+		i++;
+	}
+	i = 0;
 	if (!top_bottom_walls((*data)->map[0]) || 
 		!top_bottom_walls((*data)->map[(*data)->height - 1]))
 	{
@@ -117,7 +124,6 @@ void	map_checking(t_data **data)
 		exit(EXIT_FAILURE);
 	}
 	free((*data)->big_line);
-	checking_rows_width(data);
 	if ((*data)->collectible < 1 || 
 		(*data)->player != 1 || (*data)->exit != 1)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:06:31 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/12 19:00:13 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/03/12 20:04:12 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,22 +52,22 @@ void	reading_map_file(char *str, t_data **data)
 {
 	char	*ptr;
 	int		fd;
+	int		length;
 
 	(*data)->height = 0;
 	fd = open(str, O_RDONLY);
 	ptr = get_next_line(fd);
-	(*data)->big_line = NULL;
+	length = ft_strlen(ptr);
 	while (ptr)
 	{
 		(*data)->height++;
 		(*data)->big_line = ft_strjoin((*data)->big_line, ptr);
 		free(ptr);
 		ptr = get_next_line(fd);
+		checking_rows_width(data, length, ft_strlen(ptr));
+		length = ft_strlen(ptr);
 	}
 	close(fd);
-	(*data)->exit = 0;
-	(*data)->player = 0;
-	(*data)->collectible = 0;
 	if (!characters_checking((*data)->big_line, data))
 	{
 		write(2, "Error\nmap contain invalid character.", 41);
@@ -88,8 +88,8 @@ int	main(int ac, char **av)
 	intializing_all_variables(&data);
 	reading_map_file(av[1], &data);
 	map_checking(&data);
-	all_about_mlx(data);
-	free_everything(data);
-	mlx_terminate(data->mlx);
-	exit(0);
+	// all_about_mlx(data);
+	// free_everything(data);
+	// mlx_terminate(data->mlx);
+	// exit(0);
 }
