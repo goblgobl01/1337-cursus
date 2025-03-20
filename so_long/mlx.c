@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:07:20 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/12 19:20:59 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/03/12 23:29:34 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	draw_map(t_data *data)
 	int	x;
 	int	y;
 
-	intializing_images(data);
 	y = -1;
 	while (++y < data->height)
 	{
@@ -25,38 +24,13 @@ void	draw_map(t_data *data)
 		while (++x < data->width)
 		{
 			if (data->map[y][x] == '1')
-				mlx_image_to_window((data->mlx), data->w_img, 64 * x, 64 * y);
+				image_to_window(data, x, y, '1');
 			if (data->map[y][x] == 'V' || data->map[y][x] == 'p' 
 				|| data->map[y][x] == 'e' || data->map[y][x] == 'c')
-				mlx_image_to_window((data->mlx), data->g_img, 64 * x, 64 * y);
-			if (data->map[y][x] == 'c')
-				mlx_image_to_window((data->mlx), data->c_img, 64 * x, 64 * y);
+				image_to_window(data, x, y, 'g');
 		}
 	}
-	mlx_image_to_window((data->mlx), data->s_img, 64 * data->px, 64 * data->py);
-}
-
-void	draw_collectible(t_data *data)
-{
-	int				x;
-	int				y;
-	mlx_texture_t	*png;
-
-	y = -1;
-	mlx_delete_image(data->mlx, data->c_img);
-	data->c_img = NULL;
-	png = mlx_load_png("Textures/collectible.png");
-	data->c_img = mlx_texture_to_image((data->mlx), png);
-	mlx_delete_texture(png);
-	while (++y < data->height)
-	{
-		x = -1;
-		while (++x < data->width)
-		{
-			if (data->map[y][x] == 'c')
-				mlx_image_to_window((data->mlx), data->c_img, 64 * x, 64 * y);
-		}
-	}
+	draw_map_rest(data);
 }
 
 void	collectible_handling(t_data *data, char c)
@@ -106,6 +80,7 @@ void	move_player(t_data *data, char c)
 		}
 		i++;
 	}
+	move_count(data);
 }
 
 void	key_hooks(mlx_key_data_t keydata, void *param)
@@ -115,8 +90,7 @@ void	key_hooks(mlx_key_data_t keydata, void *param)
 	(void) keydata;
 	data = param;
 	if (data->collectible == 0)
-		mlx_image_to_window((data->mlx), data->e_img, 
-			64 * (data->ex), 64 * (data->ey));
+		data->e_img->instances[0].enabled = true;
 	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE) || 
 		(((data->px == data->ex && 
 					(data->py == data->ey))) && data->collectible == 0))
@@ -137,13 +111,20 @@ void	key_hooks(mlx_key_data_t keydata, void *param)
 
 void	all_about_mlx(t_data *data)
 {
-	data->mlx = mlx_init(64 * data->width, 64 * data->height, "MLX42", 0);
+	if (data->height > 22 || data->width > 40)
+	{
+		write(2, "Error\nmap too big", 18);
+		free_everything(data);
+		exit(1);
+	}
+	data->mlx = mlx_init(64 * data->width, 64 * data->height, "MLX42", 0); 
 	if (!(data->mlx))
 	{
 		write(2, "Error\ncouldn't initialize mlx", 30);
 		free_everything(data);
 		exit(1);
 	}
+	intializing_images(data, 0);
 	draw_map(data);
 	mlx_key_hook(data->mlx, key_hooks, data);
 	mlx_loop(data->mlx);
