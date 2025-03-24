@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 23:06:31 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/13 20:47:11 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/03/24 01:23:12 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	reading_map_file(char *str, t_data **data)
 
 	fd = open(str, O_RDONLY);
 	if (fd < 0)
-		return (write(2, "Error\n", 6), exit(1), (void)0);
+		return (write(2, "Error\n", 6), free(data), exit(1), (void)0);
 	ptr = get_next_line(fd);
 	length = str_len(ptr);
 	while (ptr)
@@ -74,8 +74,8 @@ void	reading_map_file(char *str, t_data **data)
 	}
 	close(fd);
 	if (!characters_checking((*data)->big_line, data))
-		return (write(2, "Error\n", 6), 
-			free((*data)->big_line), exit(1), (void)0);
+		return (write(2, "Error\n", 6), free((*data)->big_line), 
+			free(data), exit(1), (void)0);
 }
 
 int	main(int ac, char **av)
