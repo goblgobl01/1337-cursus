@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:59:37 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/01/26 10:04:13 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/03/24 00:43:36 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,11 @@ int	ft_atoi(const char *str)
 	}
 	while (*str >= '0' && *str <= '9')
 	{
-		if (result > (LONG_MAX - *str - '0') / 10)
-		{
-			if (sign == 1)
-				return (-1);
-			else
-				return (0);
-		}
 		result = result * 10 + *str++ - '0';
+		if (result > INT_MAX)
+			return (-1);
 	}
+	if (*str != 0)
+		return (-1);
 	return (result * sign);
 }
