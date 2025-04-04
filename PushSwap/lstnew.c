@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 13:38:52 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/22 11:00:29 by codespace        ###   ########.fr       */
+/*   Updated: 2025/04/04 16:54:01 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ t_stack	*ft_lstnew(int data)
 		return (NULL);
 	stack_a->data = data;
 	stack_a->next = NULL;
+	stack_a->idx = 0;
 	return (stack_a);
 }
