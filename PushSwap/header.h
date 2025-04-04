@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:37:28 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/03 00:21:15 by codespace        ###   ########.fr       */
+/*   Updated: 2025/04/04 18:09:03 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ void			sa(t_stack **stack);
 void			sb(t_stack **stack);
 void			ss(t_stack **stack_a, t_stack **stack_b);
 void			algorithms(t_stack **stack_a, t_stack **stack_b);
+void			handle_position(int pos, int i, 
+					t_stack **stack_a, t_stack **stack_b);
 
 #endif

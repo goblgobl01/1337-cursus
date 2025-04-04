@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 10:33:13 by codespace         #+#    #+#             */
-/*   Updated: 2025/02/25 15:59:36 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/04/04 18:07:48 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,27 @@ void	pushing_a(t_stack **stack_a, t_stack **stack_b)
 		else
 			rb(stack_b);
 	}
+}
+
+void	handle_position(int pos, int i, t_stack **stack_a, t_stack **stack_b)
+{
+	if (pos == 1)
+		sa(stack_a);
+	else if (pos == 2)
+	{
+		ra(stack_a);
+		sa(stack_a);
+	}
+	else if (pos == 3)
+	{
+		if (i == 0)
+			rra(stack_a);
+		rra(stack_a);
+	}
+	else if (pos == 4)
+	{
+		if (i == 0)
+			rra(stack_a);
+	}
+	pb(stack_a, stack_b);
 }

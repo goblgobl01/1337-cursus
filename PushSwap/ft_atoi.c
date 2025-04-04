@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:59:37 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/02/25 16:40:49 by codespace        ###   ########.fr       */
+/*   Updated: 2025/04/04 18:08:16 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ long long	ft_atoi(const char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		if (result > (LONG_MAX - *str - '0') / 10)
-				return (LONG_MAX);
+			return (LONG_MAX);
 		result = result * 10 + *str++ - '0';
 	}
 	return (result * sign);
