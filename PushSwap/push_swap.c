@@ -6,7 +6,7 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:18:34 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/03/04 20:53:58 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/04/08 15:29:43 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,21 @@ void	check_duplicate(t_stack **stack_a)
 	}
 }
 
+void	check_if_sorted(t_stack **stack)
+{
+	t_stack	*current;
+
+	current = *stack;
+	while (current && current->next)
+	{
+		if (current->data > current->next->data)
+			return ;
+		current = current->next;
+	}
+	ft_lstclear(stack);
+	exit(0);
+}
+
 int	main(int ac, char **av)
 {
 	char		**strs;
@@ -126,7 +141,8 @@ int	main(int ac, char **av)
 			exit(0);
 		}
 	}
-	check_duplicate(&stack_a); 
+	check_duplicate(&stack_a);
+	check_if_sorted(&stack_a);
 	algorithms(&stack_a, &stack_b);
 	ft_lstclear(&stack_a);
 	return (0);
