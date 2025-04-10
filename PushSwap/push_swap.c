@@ -6,16 +6,16 @@
 /*   By: mmaarafi <mmaarafi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:18:34 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/04/08 15:29:43 by mmaarafi         ###   ########.fr       */
+/*   Updated: 2025/04/10 15:29:05 by mmaarafi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-// void a()
-// {
-// 	system("leaks push_swap");
-// }
+void a()
+{
+	system("leaks push_swap");
+}
 
 int	argument_check(char **str)
 {
@@ -68,7 +68,7 @@ void	add_arguments(t_stack **stack_a, char **strs)
 		{
 			write(2, "Error\n", 6);
 			ft_lstclear(stack_a);
-			exit(0);
+			exit(1);
 		}
 		tmp = ft_lstnew(var);
 		ft_lstadd_back(stack_a, tmp);
@@ -98,7 +98,7 @@ void	check_duplicate(t_stack **stack_a)
 		{
 			write(2, "Error\n", 6);
 			ft_lstclear(stack_a);
-			exit(0);
+			exit(1);
 		}
 		tmp = tmp->next;
 	}
@@ -126,6 +126,7 @@ int	main(int ac, char **av)
 	t_stack		*stack_a;
 	t_stack		*stack_b;
 
+	atexit(a);
 	stack_a = NULL;
 	stack_b = NULL;
 	i = 0;
@@ -138,7 +139,7 @@ int	main(int ac, char **av)
 		{
 			write(2, "Error\n", 6);
 			ft_lstclear(&stack_a);
-			exit(0);
+			exit(1);
 		}
 	}
 	check_duplicate(&stack_a);
