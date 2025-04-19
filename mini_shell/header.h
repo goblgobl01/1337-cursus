@@ -9,8 +9,11 @@
 typedef enum
 {
 	command,
-	pp,
-	redirections
+	piipe,
+	leftredir,
+	rightredir,
+	dleftredir,
+	drightredir
 } e_num;
 
 typedef struct ASTNode
@@ -29,8 +32,10 @@ typedef struct ASTNode
 
 typedef struct tokens
 {
+	char	**arguments;
 	t_ast	*token;
 	t_ast	*next_token;
+	int		flag;
 } t_tokens;
 
 char	**ft_split(char const *s);

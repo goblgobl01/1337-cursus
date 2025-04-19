@@ -1,66 +1,67 @@
 #include "header.h"
 
-void	treat_token(char *str, int start, int end, t_tokens *token_stream)
+t_ast create_command_node()
 {
-	// int		i;
-	int		len;
-	char	*substring;
-
-	len = end - start;
-	substring = ft_substr(str, start, len);
-
-	(void)substring;
-	(void)token_stream;
+	
 }
 
-// int outside_set(char c)
-// {
-// 	char	*set = "|<>\n\t\v\f\r ";
-// 	int		i;
+t_ast *create_connection_token(char *argument)
+{
+	t_ast	*ptr;
 
-// 	i = 0;
-// 	while(set[i])
-// 	{
-// 		if (c == set[i])
-// 			return(0);
-// 		i++;
-// 	}
-// 	return (1);
-// }
+	ptr = malloc(sizeof(t_ast));
+	if (!ptr)
+		return (NULL);
+	if (argument[0] == '|' || argument[0] == '>' || argument[0] == '<')
+	{
+		if ((argument[0] == '>' && argument[1] == '>') || (argument[0] == '<' && argument[1] == '<'))
+		{
+			if (argument[0] == '>')
+				ptr->type = drightredir;
+				ptr->data.connection.left = NULL;
+				ptr->data.connection.right = NULL;
+			if (argument[0] == '<')
+				arguments[k] = 
+		}
+		if (argument[0] == '|')
+			arguments[k] = 
+		if (argument[0] == '>')
+			arguments[k] = 
+		if (argument[0] == '<')
+			arguments[k] = 
+	}
+}
 
 void scan_token(char *str, t_tokens *token_stream)
 {
-	int	start;
-	int	end;
-	int	i;
+	int	flag;
+	int	**arguments;
 
-	i = 0;
-	while(str[i])
+	arguments = token_stream->arguments;
+	flag = token_stream->flag;
+	while(arguments[flag])
 	{
-		while ((str[i] == ' ' || (str[i] >= 9 && str[i] <= 13)) && str[i])
-			i++;
-		start = i;
-		while (str[i] != '|' && str[i] != '>' && str[i] != '<' && str[i])
-			i++;
-		end = i;
-		treat_token(str, start, end, token_stream);
+		if (*arguments[flag] != '|' || *arguments[flag] != '>' || *arguments[flag] != '<')
+			token_stream->token = create_connection_token(arguments);
+		else
 	}
 }
 
 int main()
 {
-	char		*str = "ss>>>>s";
-	char		**arguments;
+	char *str;
+	t_tokens *token_stream;
 
-	arguments = ft_split(str);
-	while(*arguments)
+	while(1)
 	{
-		printf("%s\n", *arguments);
-		arguments++;
+		str = readline("$> ");
+		token_stream->arguments = ft_split(str);
+		// while(*arguments)
+		// {
+		// 	printf("%s\n", *arguments);
+		// 	fflush(stdout);
+		// 	arguments++;
+		// }
 	}
-	// t_tokens	*token_stream;
-
-	// token_stream = NULL;
-	// scan_token(str, token_stream);
 	return (0);
 }

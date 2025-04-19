@@ -5,13 +5,14 @@
             "name": "Debug PushSwap",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/mini_shell/a.out",
+            "program": "${workspaceFolder}/mini_shell/mini_shell",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/mini_shell",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for GDB",
