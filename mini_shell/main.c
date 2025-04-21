@@ -13,15 +13,7 @@ t_cmd	*create_pipe_node()
 
 	return ((t_cmd *) ptr);
 }
-typedef struct
-{
-	int			type;
-	char		*str;
-	struct cmd	*cmd;
-	char		*file;
-	int			mode;
-	int			fd;
-} t_redirect;
+
 
 t_cmd	*create_redirection_node(char *str)
 {
@@ -78,11 +70,12 @@ void scan_token(t_tokens *token_stream)
 	{
 		if (*arguments[i] != '|' || *arguments[i] != '>' || *arguments[i] != '<')
 		{
-			token = create_conection_node(*arguments[i]);
+			token = create_conection_node(arguments[i]);
 			i++;
 		}
 	}
 	token_stream->flag = i;
+	(void) token;
 }
 
 int main()
@@ -90,6 +83,9 @@ int main()
 	char *str;
 	t_tokens *token_stream;
 
+	token_stream = malloc(sizeof(t_tokens));
+	if(!token_stream)
+		return (0);
 	while(1)
 	{
 		str = readline("$> ");
