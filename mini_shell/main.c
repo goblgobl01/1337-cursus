@@ -12,7 +12,6 @@ int main()
 	{
 		str = readline("$> ");
 		token_stream->arguments = ft_split(str);
-		scan_token(token_stream);
 		// while(*token_stream->arguments)
 		// {
 		// 	printf("%s\n", *token_stream->arguments);
