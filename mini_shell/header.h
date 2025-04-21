@@ -6,35 +6,47 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-typedef enum
+typedef enum e_type
 {
-	command,
-	piipe,
-	leftredir,
-	rightredir,
-	dleftredir,
-	drightredir
-} e_num;
+	EXEC,
+	PIPE,
+	REDIR
+} t_type;
 
-typedef struct ASTNode
+typedef struct 
 {
-	e_num	type;
-	union
-	{
-		char **arguments;
-		struct
-		{
-			struct ASTNode	*left;
-			struct ASTNode	*right;
-		} connection;
-	} data;
-} t_ast;
+	int type;
+} t_cmd;
+
+typedef struct
+{
+	t_type type;
+	char *path;
+	char **arguments;
+} t_exec;
+
+typedef struct
+{
+	t_type type;
+	t_exec *left;
+	t_exec *right;
+} t_pipe;
+
+typedef struct
+{
+	int			type;
+	char		*str;
+	struct cmd	*cmd;
+	char		*file;
+	int			mode;
+	int			fd;
+} t_redirect;
 
 typedef struct tokens
 {
 	char	**arguments;
-	t_ast	*token;
-	t_ast	*next_token;
+	t_cmd	*token;
+	t_cmd	*next_token;
 	int		flag;
 } t_tokens;
 

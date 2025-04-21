@@ -1,50 +1,88 @@
 #include "header.h"
 
-t_ast create_command_node()
+t_cmd	*create_pipe_node()
 {
-	
-}
+	t_pipe	*ptr;
 
-t_ast *create_connection_token(char *argument)
-{
-	t_ast	*ptr;
-
-	ptr = malloc(sizeof(t_ast));
+	ptr = malloc(sizeof(t_pipe));
 	if (!ptr)
 		return (NULL);
-	if (argument[0] == '|' || argument[0] == '>' || argument[0] == '<')
-	{
-		if ((argument[0] == '>' && argument[1] == '>') || (argument[0] == '<' && argument[1] == '<'))
-		{
-			if (argument[0] == '>')
-				ptr->type = drightredir;
-				ptr->data.connection.left = NULL;
-				ptr->data.connection.right = NULL;
-			if (argument[0] == '<')
-				arguments[k] = 
-		}
-		if (argument[0] == '|')
-			arguments[k] = 
-		if (argument[0] == '>')
-			arguments[k] = 
-		if (argument[0] == '<')
-			arguments[k] = 
-	}
+	ptr->type = PIPE;
+	ptr->left = NULL;
+	ptr->right = NULL;
+
+	return ((t_cmd *) ptr);
+}
+typedef struct
+{
+	int			type;
+	char		*str;
+	struct cmd	*cmd;
+	char		*file;
+	int			mode;
+	int			fd;
+} t_redirect;
+
+t_cmd	*create_redirection_node(char *str)
+{
+	t_redirect	*ptr;
+
+	ptr = malloc(sizeof(t_redirect));
+	if(!ptr)
+		return (NULL);
+	ptr->type = REDIR;
+	ptr->str = str;
+	ptr->cmd = NULL;
+	ptr->file = NULL;
+	ptr->mode = -1;
+	ptr->fd = -1;
+
+	return ((t_cmd *) ptr);
 }
 
-void scan_token(char *str, t_tokens *token_stream)
+t_cmd	*create_conection_node(char *str)
 {
-	int	flag;
-	int	**arguments;
+	int i;
+	t_cmd *token;
+
+	i = 0;
+	if (str[i] == '|' || str[i] == '>' || str[i] == '<')
+	{
+		if ((str[i] == '>' && str[i + 1] == '>') || (str[i] == '<' && str[i + 1] == '<'))
+		{
+			if (str[i] == '>')
+				token = create_redirection_node(str);
+			if (str[i] == '<')
+				token = create_redirection_node(str);
+		}
+		if (str[i] == '|')
+			token = create_pipe_node();
+		if (str[i] == '>')
+			token = create_redirection_node(str);
+		if (str[i] == '<')
+			token = create_redirection_node(str);
+	}
+
+	return (token);
+}
+
+void scan_token(t_tokens *token_stream)
+{
+	t_cmd	*token;
+	char	**arguments;
+	int		i;
 
 	arguments = token_stream->arguments;
-	flag = token_stream->flag;
-	while(arguments[flag])
+	i = token_stream->flag;
+	while(arguments[i])
 	{
-		if (*arguments[flag] != '|' || *arguments[flag] != '>' || *arguments[flag] != '<')
-			token_stream->token = create_connection_token(arguments);
-		else
+		if (*arguments[i] != '|' || *arguments[i] != '>' || *arguments[i] != '<')
+		{
+			token = create_conection_node(*arguments[i]);
+			i++;
+		}
 	}
+	token_stream->flag = i;
 }
 
 int main()
@@ -56,6 +94,7 @@ int main()
 	{
 		str = readline("$> ");
 		token_stream->arguments = ft_split(str);
+		scan_token(token_stream);
 		// while(*arguments)
 		// {
 		// 	printf("%s\n", *arguments);
