@@ -1,5 +1,31 @@
 #include "header.h"
 
+void	parse_pipe(t_tokens	*token_stream)
+{
+	t_cmd	*a;
+
+
+	a = parse_redirection(token_stream);
+}
+
+void	parse_redirection(t_tokens	*token_stream)
+{
+	t_cmd	*a;
+
+	a = parse_command(token_stream);
+	if (token_stream->next_token->type == REDIR)
+	{
+		scan_token(token_stream);
+
+	}
+}
+
+t_cmd	*parse_command(t_tokens *token_stream)
+{
+	if(token_stream->token->type == EXEC)
+		return (token_stream->token);
+}
+
 int main()
 {
 	char *str;
