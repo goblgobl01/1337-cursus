@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 15:18:43 by mmaarafi          #+#    #+#             */
-/*   Updated: 2025/04/18 21:31:55 by codespace        ###   ########.fr       */
+/*   Updated: 2025/04/21 21:01:56 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	inside_charset(char c)
 	char	*charset;
 	int		i;
 
-	charset = " \t\n\v\r\f|><";
+	charset = "|><";
 	i = 0;
 	while (charset[i])
 	{

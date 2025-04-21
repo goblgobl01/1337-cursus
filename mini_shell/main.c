@@ -32,7 +32,7 @@ t_cmd	*create_redirection_node(char *str)
 	return ((t_cmd *) ptr);
 }
 
-t_cmd	*create_conection_node(char *str)
+t_cmd	*create_connection_node(char *str)
 {
 	int i;
 	t_cmd *token;
@@ -58,24 +58,38 @@ t_cmd	*create_conection_node(char *str)
 	return (token);
 }
 
+t_cmd	*create_command_node(t_tokens	*token_stream)
+{
+	t_exec *ptr;
+
+	ptr = malloc(sizeof(t_exec));
+	ptr->type = EXEC;
+	ptr->arg = token_stream->arguments[token_stream->flag];
+	ptr->arguments = NULL;
+	ptr->path = NULL;
+
+	return ((t_cmd *)ptr);
+}
+
 void scan_token(t_tokens *token_stream)
 {
-	t_cmd	*token;
-	char	**arguments;
-	int		i;
+	char	**arg;
 
-	arguments = token_stream->arguments;
-	i = token_stream->flag;
-	while(arguments[i])
+	arg = token_stream->arguments;
+	if (*arg[token_stream->flag] == '|' || *arg[token_stream->flag] == '>' || *arg[token_stream->flag] == '<')
 	{
-		if (*arguments[i] != '|' || *arguments[i] != '>' || *arguments[i] != '<')
-		{
-			token = create_conection_node(arguments[i]);
-			i++;
-		}
+		token_stream->token = create_connection_node(arg[token_stream->flag]);
+		token_stream->flag++;
 	}
-	token_stream->flag = i;
-	(void) token;
+	else
+	{
+		token_stream->token = create_command_node(token_stream);
+		token_stream->flag++;
+	}
+	if (*arg[token_stream->flag] == '|' || *arg[token_stream->flag] == '>' || *arg[token_stream->flag] == '<')
+		token_stream->next_token = create_connection_node(arg[token_stream->flag]);
+	else
+		token_stream->next_token = create_command_node(token_stream);
 }
 
 int main()
@@ -91,11 +105,11 @@ int main()
 		str = readline("$> ");
 		token_stream->arguments = ft_split(str);
 		scan_token(token_stream);
-		// while(*arguments)
+		// while(*token_stream->arguments)
 		// {
-		// 	printf("%s\n", *arguments);
+		// 	printf("%s\n", *token_stream->arguments);
 		// 	fflush(stdout);
-		// 	arguments++;
+		// 	token_stream->arguments++;
 		// }
 	}
 	return (0);

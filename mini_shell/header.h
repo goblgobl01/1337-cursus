@@ -22,6 +22,7 @@ typedef struct
 {
 	t_type type;
 	char *path;
+	char *arg;
 	char **arguments;
 } t_exec;
 
