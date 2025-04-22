@@ -46,8 +46,10 @@ typedef struct
 typedef struct tokens
 {
 	char	**arguments;
-	t_cmd	*token;
-	t_cmd	*next_token;
+	int		token_type;
+	char	*token;
+	int		next_token_type;
+	char	*next_token;
 	int		flag;
 } t_tokens;
 
