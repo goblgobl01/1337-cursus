@@ -58,18 +58,18 @@ t_cmd	*create_redirection_node(char *str)
 // 	return (token);
 // }
 
-// t_cmd	*create_command_node(t_tokens	*token_stream)
-// {
-// 	t_exec *ptr;
+t_cmd	*create_command_node(t_tokens	*token_stream)
+{
+	t_exec *ptr;
 
-// 	ptr = malloc(sizeof(t_exec));
-// 	ptr->type = EXEC;
-// 	ptr->arg = token_stream->arguments[token_stream->flag];
-// 	ptr->arguments = NULL;
-// 	ptr->path = NULL;
+	ptr = malloc(sizeof(t_exec));
+	ptr->type = EXEC;
+	ptr->arg = token_stream->arguments[token_stream->flag];
+	ptr->arguments = ft_split();
+	ptr->path = NULL;
 
-// 	return ((t_cmd *)ptr);
-// }
+	return ((t_cmd *)ptr);
+}
 
 
 t_cmd	*parse_pipe(t_tokens	*token_stream)
@@ -112,7 +112,10 @@ t_cmd	*parse_redirection(t_tokens	*token_stream)
 t_cmd	*parse_command(t_tokens *token_stream)
 {
 	if (token_stream->token_type == EXEC)
+	{
+		new
 		return (token_stream->token);
+	}
 	else
 		return (NULL);
 }
